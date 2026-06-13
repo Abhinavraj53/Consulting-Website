@@ -41,20 +41,19 @@ export function Hero() {
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Check className="h-3.5 w-3.5" />
             </span>
-            Sada Grow Karo
+            सोच हमारी, कामयाबी आपकी
           </p>
 
-          <h1 className="font-heading text-5xl font-extrabold leading-[1.04] tracking-tight text-[#05070c] text-balance md:text-6xl lg:text-[4.45rem]">
-            Buland Sapno ke
+          <h1 className="font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-[#05070c] text-balance md:text-5xl lg:text-[4rem]">
+            Are You Maximizing Your Company&apos;s
             <br />
-            Saath{" "}
-            <span className="text-primary">भागीदारी</span>
+            <span className="text-primary">Government Benefits?</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-[1.45rem] leading-[1.55] text-[#101318] md:text-[1.6rem]">
-            From registration to investor pitch,
+          <p className="mt-8 max-w-2xl text-[1.35rem] leading-[1.55] text-[#101318] md:text-[1.5rem]">
+            Funding Benefits? Marketing Benefits? Certifications?
             <br />
-            <strong>we simplify everything.</strong>
+            <strong>सोच हमारी, कामयाबी आपकी</strong>
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-7">
