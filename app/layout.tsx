@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Poppins, DM_Sans, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -18,7 +17,6 @@ export const metadata: Metadata = {
   title: 'Epeno Advisory - Business Consulting Agency in Noida, Delhi NCR',
   description:
     'Epeno Advisory helps startups and businesses with government benefits, funding assistance, registrations, certifications, compliances and digital marketing.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -51,7 +49,6 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
