@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins, DM_Sans, Geist_Mono } from 'next/font/google'
+import { VisitorPopup } from '@/components/consua/visitor-popup'
 import './globals.css'
 
 const poppins = Poppins({
@@ -49,6 +50,7 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
         {children}
+        <VisitorPopup />
       </body>
     </html>
   )

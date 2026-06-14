@@ -8,9 +8,7 @@ import { getServiceHref, serviceCategories } from "./service-data"
 const navItems = [
   { label: "Home", href: "/", hasDropdown: false },
   { label: "About", href: "/about-us", hasDropdown: false },
-  { label: "Projects", href: "/#projects", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: true },
-  { label: "Blog", href: "/#blog", hasDropdown: false },
   { label: "Contact", href: "/#contact", hasDropdown: false },
 ]
 
@@ -116,7 +114,7 @@ export function Header() {
         <div
           className={`mx-auto flex items-center justify-between px-6 transition-all duration-300 ${
             scrolled
-              ? "h-[76px] max-w-7xl"
+              ? "h-[76px] max-w-7xl xl:pl-[340px]"
               : "h-20 max-w-none xl:pl-[600px] xl:pr-16 2xl:pr-28"
           }`}
         >
