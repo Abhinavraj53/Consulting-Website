@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { ArrowRight, BadgeCheck, Building2, CheckCircle2, HandCoins, Megaphone, ShieldCheck } from "lucide-react"
 import { Header } from "@/components/consua/header"
 import { Footer } from "@/components/consua/footer"
+import { AnimatedCounter } from "@/components/consua/animated-counter"
+import { primaryStats } from "@/components/consua/stats-data"
 
 export const metadata: Metadata = {
   title: "About Us | Epeno Advisory",
@@ -30,13 +32,6 @@ const strengths = [
     title: "Startup-Centric Growth Support",
     text: "Epeno works closely with startups and small businesses that need practical guidance, sharper documentation and execution-focused advisory.",
   },
-]
-
-const stats = [
-  ["50+", "Service Options"],
-  ["500+", "Projects Supported"],
-  ["100+", "Upcoming Projects"],
-  ["300+", "Startup India Recognition"],
 ]
 
 const focusAreas = [
@@ -201,13 +196,13 @@ export default function AboutUsPage() {
       <section className="ep-section bg-secondary">
         <div className="ep-container">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map(([value, label]) => (
-              <div key={label} className="ep-card p-7 text-center">
+            {primaryStats.map((stat) => (
+              <div key={stat.label} className="ep-card p-7 text-center">
                 <p className="font-heading text-5xl font-extrabold text-navy">
-                  {value}
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-3 text-sm font-extrabold uppercase tracking-[0.16em] text-muted-foreground">
-                  {label}
+                  {stat.label}
                 </p>
               </div>
             ))}

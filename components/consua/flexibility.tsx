@@ -1,11 +1,13 @@
 "use client"
 
 import { BadgeCheck, ClipboardCheck, FileText, HandCoins, ShieldCheck } from "lucide-react"
+import { AnimatedCounter } from "./animated-counter"
+import { siteStats } from "./stats-data"
 
 const metrics = [
-  { value: "90%", label: "Process Support" },
-  { value: "95%", label: "Client Focus" },
-  { value: "50+", label: "Advisory Services" },
+  siteStats.processSupport,
+  siteStats.clientFocus,
+  siteStats.serviceOptions,
 ]
 
 const features = [
@@ -64,7 +66,7 @@ export function Flexibility() {
                   className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur"
                 >
                   <p className="font-heading text-3xl font-extrabold text-primary">
-                    {metric.value}
+                    <AnimatedCounter end={metric.value} suffix={metric.suffix} />
                   </p>
                   <p className="mt-2 text-sm font-semibold leading-snug text-white/75">
                     {metric.label}

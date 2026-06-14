@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import { ArrowRight, Building2, Landmark, Lightbulb, Network } from "lucide-react"
+import { AnimatedCounter } from "./animated-counter"
+import { siteStats } from "./stats-data"
 
 const states = [
   { name: "Jammu & Kashmir", count: 4, x: 210, y: 48, path: "M176 22 L226 16 L259 48 L242 94 L194 92 L162 56 Z" },
@@ -48,7 +50,7 @@ export function IncubationNetwork() {
               {activeState.name}
             </p>
             <p className="mt-1 text-lg font-bold text-foreground">
-              {activeState.count} Incubation centre{activeState.count > 1 ? "s" : ""}
+              <AnimatedCounter key={activeState.name} end={activeState.count} /> Incubation centre{activeState.count > 1 ? "s" : ""}
             </p>
           </div>
 
@@ -89,7 +91,7 @@ export function IncubationNetwork() {
               {activeState.name}
             </p>
             <p className="mt-1 text-lg font-bold text-foreground">
-              {activeState.count} Incubation centre{activeState.count > 1 ? "s" : ""}
+              <AnimatedCounter key={activeState.name} end={activeState.count} /> Incubation centre{activeState.count > 1 ? "s" : ""}
             </p>
           </div>
         </div>
@@ -144,7 +146,7 @@ export function IncubationNetwork() {
           </div>
 
           <div className="mt-6 inline-flex rounded-full border border-dashed border-navy/35 bg-white px-6 py-2 font-heading text-xl font-extrabold italic text-navy">
-            and 100+ more
+            and <span className="mx-1"><AnimatedCounter end={siteStats.incubationSupportOptions.value} suffix={siteStats.incubationSupportOptions.suffix} /></span> more
           </div>
         </div>
       </div>

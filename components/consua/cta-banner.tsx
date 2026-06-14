@@ -1,61 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import { Award, BadgeCheck, Handshake } from "lucide-react"
-
-function Counter({
-  end,
-  suffix = "+",
-  duration = 1400,
-}: {
-  end: number
-  suffix?: string
-  duration?: number
-}) {
-  const [value, setValue] = useState(0)
-  const [hasStarted, setHasStarted] = useState(false)
-  const ref = useRef<HTMLSpanElement>(null)
-
-  useEffect(() => {
-    const node = ref.current
-    if (!node || hasStarted) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
-
-        setHasStarted(true)
-        const startTime = performance.now()
-
-        const tick = (now: number) => {
-          const progress = Math.min((now - startTime) / duration, 1)
-          const eased = 1 - Math.pow(1 - progress, 3)
-
-          setValue(Math.round(end * eased))
-
-          if (progress < 1) {
-            requestAnimationFrame(tick)
-          }
-        }
-
-        requestAnimationFrame(tick)
-        observer.disconnect()
-      },
-      { threshold: 0.35 },
-    )
-
-    observer.observe(node)
-
-    return () => observer.disconnect()
-  }, [duration, end, hasStarted])
-
-  return (
-    <span ref={ref}>
-      {value}
-      {suffix}
-    </span>
-  )
-}
+import { AnimatedCounter } from "./animated-counter"
+import { siteStats } from "./stats-data"
 
 export function CtaBanner() {
   return (
@@ -85,10 +32,10 @@ export function CtaBanner() {
             <Handshake className="h-16 w-16" />
             <div>
               <p className="font-heading text-7xl font-bold leading-none">
-                <Counter end={500} />
+                <AnimatedCounter end={siteStats.projectsSupported.value} suffix={siteStats.projectsSupported.suffix} />
               </p>
               <p className="mt-3 font-heading text-lg font-semibold text-white">
-                Business advices given over 30 years
+                {siteStats.projectsSupported.label}
               </p>
             </div>
           </div>
@@ -100,10 +47,10 @@ export function CtaBanner() {
             </span>
             <div>
               <p className="font-heading text-7xl font-bold leading-none">
-                <Counter end={30} />
+                <AnimatedCounter end={siteStats.businessAwards.value} suffix={siteStats.businessAwards.suffix} />
               </p>
               <p className="mt-3 font-heading text-lg font-semibold text-white">
-                Business Excellence awards achieved
+                {siteStats.businessAwards.label}
               </p>
             </div>
           </div>

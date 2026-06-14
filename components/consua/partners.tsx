@@ -1,8 +1,11 @@
+import { AnimatedCounter } from "./animated-counter"
+import { siteStats } from "./stats-data"
+
 const stats = [
-  { value: "50+", label: "Service Options" },
-  { value: "500+", label: "Projects Completed" },
-  { value: "100+", label: "Startup India Recognitions" },
-  { value: "8+", label: "Core Service Categories" },
+  siteStats.serviceOptions,
+  siteStats.projectsSupported,
+  siteStats.startupRecognitions,
+  siteStats.coreServiceCategories,
 ]
 
 const categories = [
@@ -38,7 +41,7 @@ export function Partners() {
           {stats.map((stat) => (
             <div key={stat.label} className="ep-card ep-card-hover p-7">
               <p className="font-heading text-4xl font-extrabold text-primary">
-                {stat.value}
+                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
                 {stat.label}

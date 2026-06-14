@@ -2,6 +2,8 @@
 
 import { FormEvent, useEffect, useState } from "react"
 import { BadgeCheck, Building2, CircleX, Landmark, Sparkles } from "lucide-react"
+import { AnimatedCounter } from "./animated-counter"
+import { siteStats } from "./stats-data"
 
 const storageKey = "epeno-visitor-popup-dismissed"
 
@@ -83,7 +85,8 @@ export function VisitorPopup() {
 
             <div className="mt-10 w-fit rounded-2xl bg-white px-7 py-5 text-center shadow-[0_22px_60px_-34px_rgba(16,47,88,0.7)]">
               <p className="font-heading text-xl font-extrabold text-[#05070c] md:text-2xl">
-                92% <span className="text-base font-semibold">of clients move to</span>
+                <AnimatedCounter end={siteStats.clientSatisfaction.value} suffix={siteStats.clientSatisfaction.suffix} />{" "}
+                <span className="text-base font-semibold">client satisfaction</span>
               </p>
               <p className="font-heading text-2xl font-extrabold italic text-navy">
                 the next stage
@@ -112,7 +115,7 @@ export function VisitorPopup() {
 
             <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-dashed border-navy/20 bg-accent px-4 py-2 text-sm font-bold text-navy">
               <Sparkles className="h-4 w-4 text-primary" />
-              and 100+ more support options
+              and <AnimatedCounter end={siteStats.incubationSupportOptions.value} suffix={siteStats.incubationSupportOptions.suffix} /> more support options
             </div>
           </div>
         </section>

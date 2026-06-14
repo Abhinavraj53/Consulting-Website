@@ -1,4 +1,6 @@
 import { TrendingUp, Globe } from "lucide-react"
+import { AnimatedCounter } from "./animated-counter"
+import { siteStats } from "./stats-data"
 
 export function About() {
   return (
@@ -46,9 +48,11 @@ export function About() {
                 <TrendingUp className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-heading text-3xl font-extrabold leading-none text-navy">93%</p>
+                <p className="font-heading text-3xl font-extrabold leading-none text-navy">
+                  <AnimatedCounter end={siteStats.clientSatisfaction.value} suffix={siteStats.clientSatisfaction.suffix} />
+                </p>
                 <p className="mt-1 text-sm font-semibold text-muted-foreground">
-                  Client Satisfaction
+                  {siteStats.clientSatisfaction.label}
                 </p>
               </div>
             </div>
@@ -58,9 +62,11 @@ export function About() {
                 <Globe className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-heading text-3xl font-extrabold leading-none text-navy">53+</p>
+                <p className="font-heading text-3xl font-extrabold leading-none text-navy">
+                  <AnimatedCounter end={siteStats.serviceOptions.value} suffix={siteStats.serviceOptions.suffix} />
+                </p>
                 <p className="mt-1 text-sm font-semibold text-muted-foreground">
-                  Services Offered
+                  {siteStats.serviceOptions.label}
                 </p>
               </div>
             </div>
