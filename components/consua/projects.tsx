@@ -11,6 +11,7 @@ const slides = [
     metric: "01",
     tag: "Startup readiness",
     img: "/consua-project.jpg",
+    href: "/services/startup-india-certification",
   },
   {
     eyebrow: "Funding Assistance",
@@ -19,6 +20,7 @@ const slides = [
     metric: "02",
     tag: "Capital access",
     img: "/consua-cta.jpg",
+    href: "/services/seed-fund",
   },
   {
     eyebrow: "Brand Protection",
@@ -27,6 +29,7 @@ const slides = [
     metric: "03",
     tag: "Legal foundation",
     img: "/consua-blog-3.jpg",
+    href: "/services/trademark-registration",
   },
   {
     eyebrow: "Compliance Desk",
@@ -35,6 +38,7 @@ const slides = [
     metric: "04",
     tag: "Ongoing support",
     img: "/consua-blog-2.jpg",
+    href: "/services/roc-compliances-for-pvt-ltd",
   },
 ]
 
@@ -46,7 +50,7 @@ export function Projects() {
   const goNext = () => setActive((current) => (current + 1) % slides.length)
 
   return (
-    <section className="relative overflow-hidden bg-navy py-24 text-navy-foreground md:py-32">
+    <section id="projects" className="relative overflow-hidden bg-navy py-24 text-navy-foreground md:py-32">
       <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="ep-container">
@@ -115,10 +119,10 @@ export function Projects() {
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
                 {slide.desc}
               </p>
-              <button className="ep-button group mt-10 w-fit gap-3">
+              <a href={slide.href} className="ep-button group mt-10 w-fit gap-3">
                 Read More
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -57,16 +57,16 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-7">
-            <button className="ep-button h-16 gap-3 px-9 text-lg">
+            <a href="/services" className="ep-button h-16 gap-3 px-9 text-lg">
               Grow with us
               <ArrowUpRight className="h-5 w-5" />
-            </button>
-            <button className="inline-flex items-center gap-4 font-heading text-sm font-extrabold uppercase tracking-[0.2em] text-foreground transition-colors hover:text-primary">
+            </a>
+            <a href="/#about" className="inline-flex items-center gap-4 font-heading text-sm font-extrabold uppercase tracking-[0.2em] text-foreground transition-colors hover:text-primary">
               <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-foreground">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </span>
               Introduction
-            </button>
+            </a>
           </div>
         </div>
 

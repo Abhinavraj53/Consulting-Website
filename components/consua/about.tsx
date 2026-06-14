@@ -2,7 +2,7 @@ import { TrendingUp, Globe } from "lucide-react"
 
 export function About() {
   return (
-    <section className="ep-section relative overflow-hidden bg-background">
+    <section id="about" className="ep-section relative overflow-hidden bg-background">
       <div className="ep-container grid items-center gap-20 lg:grid-cols-2">
         {/* Why: a strict two-column split creates a calm credibility section after the expressive hero. */}
         <div>

@@ -6,24 +6,27 @@ const posts = [
     author: "Epeno",
     date: "Startup Guide",
     title: "How Startup India certification helps unlock business benefits.",
+    href: "/services/startup-india-certification",
   },
   {
     img: "/consua-blog-2.jpg",
     author: "Epeno",
     date: "Funding Guide",
     title: "Government loans and grants for startups and MSMEs.",
+    href: "/services/seed-fund",
   },
   {
     img: "/consua-blog-3.jpg",
     author: "Epeno",
     date: "Compliance Guide",
     title: "GST, ROC and annual compliance essentials for companies.",
+    href: "/services/gst-compliances",
   },
 ]
 
 export function Blog() {
   return (
-    <section className="ep-section bg-secondary">
+    <section id="blog" className="ep-section bg-secondary">
       <div className="ep-container">
         <div className="text-center">
           <p className="ep-eyebrow">
@@ -56,12 +59,12 @@ export function Blog() {
                 <h3 className="mt-3 font-heading text-xl font-extrabold leading-snug text-foreground text-balance">
                   {post.title}
                 </h3>
-                <button className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                <a href={post.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                   Read More
-                </button>
+                </a>
               </div>
             </article>
           ))}

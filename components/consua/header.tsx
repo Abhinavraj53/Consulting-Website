@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react"
 import { ChevronDown, MapPin, Menu, Phone, X } from "lucide-react"
 import { Logo } from "./logo"
-import { serviceCategories } from "./service-data"
+import { getServiceHref, serviceCategories } from "./service-data"
 
 const navItems = [
   { label: "Home", href: "/", hasDropdown: false },
-  { label: "Pages", href: "#", hasDropdown: false },
-  { label: "Projects", href: "#projects", hasDropdown: false },
+  { label: "About", href: "/#about", hasDropdown: false },
+  { label: "Projects", href: "/#projects", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: true },
-  { label: "Blog", href: "#blog", hasDropdown: false },
-  { label: "Contact", href: "#contact", hasDropdown: false },
+  { label: "Blog", href: "/#blog", hasDropdown: false },
+  { label: "Contact", href: "/#contact", hasDropdown: false },
 ]
 
 export function Header() {
@@ -61,7 +61,7 @@ export function Header() {
       )}
 
       <a
-        href="#"
+        href="/"
         className={`absolute z-30 flex shrink-0 items-center transition-all duration-300 ${
           scrolled
             ? "left-6 top-1/2 -translate-y-1/2 xl:left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]"
@@ -91,16 +91,16 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-6 font-heading text-base font-bold text-white/90">
-            <a href="#" aria-label="Facebook" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="Facebook" className="transition-colors hover:text-primary">
               f
             </a>
-            <a href="#" aria-label="Twitter" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="Twitter" className="transition-colors hover:text-primary">
               x
             </a>
-            <a href="#" aria-label="Pinterest" className="font-heading text-base font-bold transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="Pinterest" className="font-heading text-base font-bold transition-colors hover:text-primary">
               p
             </a>
-            <a href="#" aria-label="LinkedIn" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="LinkedIn" className="transition-colors hover:text-primary">
               in
             </a>
           </div>
@@ -146,9 +146,9 @@ export function Header() {
           </nav>
 
           <div className="hidden xl:block">
-            <button className="ep-button min-w-[178px] rounded-lg">
+            <a href="/#contact" className="ep-button min-w-[178px] rounded-lg">
               Get Consultant
-            </button>
+            </a>
           </div>
 
           <button
@@ -185,7 +185,7 @@ export function Header() {
                     {category.services.map((service) => (
                       <li key={service}>
                         <a
-                          href={`/services#${category.title.toLowerCase()}`}
+                          href={getServiceHref(service)}
                           className="group flex items-start gap-3 text-sm font-semibold leading-6 text-foreground/82 transition-colors hover:text-navy"
                         >
                           <category.icon className="mt-1 h-4 w-4 shrink-0 fill-primary/10 text-navy transition-colors group-hover:text-primary" />
@@ -228,9 +228,9 @@ export function Header() {
                 </a>
               ))}
             </div>
-            <button className="mt-3 rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground">
+            <a href="/#contact" className="mt-3 rounded-sm bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground">
               Get Consultant
-            </button>
+            </a>
           </nav>
         </div>
       )}

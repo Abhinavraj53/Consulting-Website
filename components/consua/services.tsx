@@ -79,7 +79,7 @@ export function Services() {
   const services = serviceGroups[activeTab]
 
   return (
-    <section className="ep-section bg-secondary">
+    <section id="services" className="ep-section bg-secondary">
       <div className="ep-container grid gap-14 lg:grid-cols-[380px_1fr]">
         {/* Why: the sidebar establishes hierarchy while the service grid stays scannable. */}
         <div className="ep-card p-8">

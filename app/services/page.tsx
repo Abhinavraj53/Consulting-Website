@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Header } from "@/components/consua/header"
 import { Footer } from "@/components/consua/footer"
-import { allServices, serviceCategories } from "@/components/consua/service-data"
+import { allServices, getServiceHref, serviceCategories } from "@/components/consua/service-data"
 
 export default function ServicesPage() {
   return (
@@ -126,10 +126,10 @@ export default function ServicesPage() {
                       </div>
 
                       <a
-                        href="#contact"
+                        href={getServiceHref(service)}
                         className="mt-7 inline-flex items-center gap-2 font-heading text-sm font-extrabold text-navy transition-colors hover:text-primary"
                       >
-                        Get support
+                        View details
                         <ArrowRight className="h-4 w-4" />
                       </a>
                     </article>

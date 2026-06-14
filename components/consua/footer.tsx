@@ -1,19 +1,20 @@
 import { ArrowRight } from "lucide-react"
 import { Facebook, Twitter, Linkedin, Instagram } from "./brand-icons"
 import { Logo } from "./logo"
+import { getServiceHref } from "./service-data"
 
 const company = [
-  "Home",
-  "About us",
-  "Services",
-  "Contact us",
+  { label: "Home", href: "/" },
+  { label: "About us", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact us", href: "/#contact" },
 ]
 const servicesLinks = [
-  "Business Incorporation",
-  "Funding Assistance",
-  "Certifications",
-  "Tax Filing",
-  "Digital Marketing",
+  { label: "Business Incorporation", href: getServiceHref("Private Limited Company") },
+  { label: "Funding Assistance", href: getServiceHref("Seed Fund") },
+  { label: "Certifications", href: getServiceHref("START-UP India Certificate") },
+  { label: "Tax Filing", href: getServiceHref("GST Compliances") },
+  { label: "Digital Marketing", href: getServiceHref("Bhaskar ID") },
 ]
 
 export function Footer() {
@@ -43,9 +44,9 @@ export function Footer() {
           <h3 className="font-heading text-lg font-bold">Useful Links</h3>
           <ul className="mt-6 space-y-3 text-sm text-navy-foreground/70">
             {company.map((item) => (
-              <li key={item}>
-                <a href="#" className="transition-colors hover:text-primary">
-                  {item}
+              <li key={item.label}>
+                <a href={item.href} className="transition-colors hover:text-primary">
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -56,9 +57,9 @@ export function Footer() {
           <h3 className="font-heading text-lg font-bold">Our Services</h3>
           <ul className="mt-6 space-y-3 text-sm text-navy-foreground/70">
             {servicesLinks.map((item) => (
-              <li key={item}>
-                <a href="#" className="transition-colors hover:text-primary">
-                  {item}
+              <li key={item.label}>
+                <a href={item.href} className="transition-colors hover:text-primary">
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -92,16 +93,16 @@ export function Footer() {
         <div className="ep-container flex flex-col items-center justify-between gap-4 py-6 text-sm text-navy-foreground/60 md:flex-row">
           <p>© Copyright All Right Reserved ©2024 Epeno Advisory Private Limited</p>
           <div className="flex items-center gap-4">
-            <a href="#" aria-label="Facebook" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="Facebook" className="transition-colors hover:text-primary">
               <Facebook className="h-4 w-4" />
             </a>
-            <a href="#" aria-label="Twitter" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="Twitter" className="transition-colors hover:text-primary">
               <Twitter className="h-4 w-4" />
             </a>
-            <a href="#" aria-label="LinkedIn" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="LinkedIn" className="transition-colors hover:text-primary">
               <Linkedin className="h-4 w-4" />
             </a>
-            <a href="#" aria-label="Instagram" className="transition-colors hover:text-primary">
+            <a href="/#contact" aria-label="Instagram" className="transition-colors hover:text-primary">
               <Instagram className="h-4 w-4" />
             </a>
           </div>

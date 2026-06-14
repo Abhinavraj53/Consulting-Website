@@ -59,7 +59,7 @@ function Counter({
 
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-navy py-24 text-white md:py-32">
+    <section id="contact" className="relative overflow-hidden bg-navy py-24 text-white md:py-32">
       <div className="absolute inset-0">
         <img
           src="/innovation-man.png"
@@ -75,9 +75,9 @@ export function CtaBanner() {
           <h2 className="font-heading text-4xl font-extrabold leading-tight tracking-tight text-balance md:text-5xl">
             Looking for a First-Class Business Consultant?
           </h2>
-          <button className="ep-button mt-12 h-16 px-12 text-base">
+          <a href="tel:+919211831649" className="ep-button mt-12 h-16 px-12 text-base">
             Request A Call Back
-          </button>
+          </a>
         </div>
 
         <div className="border-l border-white/20 pl-10 lg:pl-14">
