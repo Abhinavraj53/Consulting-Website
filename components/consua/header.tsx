@@ -7,7 +7,7 @@ import { getServiceHref, serviceCategories } from "./service-data"
 
 const navItems = [
   { label: "Home", href: "/", hasDropdown: false },
-  { label: "About", href: "/#about", hasDropdown: false },
+  { label: "About", href: "/about-us", hasDropdown: false },
   { label: "Projects", href: "/#projects", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: true },
   { label: "Blog", href: "/#blog", hasDropdown: false },
@@ -146,7 +146,7 @@ export function Header() {
           </nav>
 
           <div className="hidden xl:block">
-            <a href="/#contact" className="ep-button min-w-[178px] rounded-lg">
+            <a href="/about-us#contact" className="ep-button min-w-[178px] rounded-lg">
               Get Consultant
             </a>
           </div>
@@ -228,7 +228,7 @@ export function Header() {
                 </a>
               ))}
             </div>
-            <a href="/#contact" className="mt-3 rounded-sm bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground">
+            <a href="/about-us#contact" className="mt-3 rounded-sm bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground">
               Get Consultant
             </a>
           </nav>

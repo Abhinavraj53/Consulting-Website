@@ -5,7 +5,7 @@ import { getServiceHref } from "./service-data"
 
 const company = [
   { label: "Home", href: "/" },
-  { label: "About us", href: "/#about" },
+  { label: "About us", href: "/about-us" },
   { label: "Services", href: "/services" },
   { label: "Contact us", href: "/#contact" },
 ]
