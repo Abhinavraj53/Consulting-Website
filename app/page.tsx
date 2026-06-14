@@ -7,6 +7,7 @@ import { Process } from "@/components/consua/process"
 import { Flexibility } from "@/components/consua/flexibility"
 import { Innovation } from "@/components/consua/innovation"
 import { Partners } from "@/components/consua/partners"
+import { IncubationNetwork } from "@/components/consua/incubation-network"
 import { Team } from "@/components/consua/team"
 import { Projects } from "@/components/consua/projects"
 import { CtaBanner } from "@/components/consua/cta-banner"
@@ -27,6 +28,7 @@ export default function Page() {
       <Flexibility />
       <Innovation />
       <Partners />
+      <IncubationNetwork />
       <Team />
       <Projects />
       <CtaBanner />
