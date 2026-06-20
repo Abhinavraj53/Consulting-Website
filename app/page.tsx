@@ -1,6 +1,5 @@
 import { Header } from "@/components/consua/header"
 import { Hero } from "@/components/consua/hero"
-import { About } from "@/components/consua/about"
 import { Consulting } from "@/components/consua/consulting"
 import { Services } from "@/components/consua/services"
 import { Process } from "@/components/consua/process"
@@ -20,8 +19,8 @@ export default function Page() {
     <main className="overflow-x-hidden">
       <Header />
       <Hero />
-      <About />
       <Services />
+      <Testimonial />
       <IncubationNetwork />
       <Consulting />
       <Process />
@@ -30,7 +29,6 @@ export default function Page() {
       <Partners />
       <Projects />
       <CtaBanner />
-      <Testimonial />
       <Faq />
       <Blog />
       <Footer />

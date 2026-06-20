@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { ArrowRight, BadgeCheck, Building2, CheckCircle2, HandCoins, Megaphone, ShieldCheck } from "lucide-react"
 import { Header } from "@/components/consua/header"
 import { Footer } from "@/components/consua/footer"
+import { About } from "@/components/consua/about"
 import { AnimatedCounter } from "@/components/consua/animated-counter"
 import { primaryStats } from "@/components/consua/stats-data"
 import { siteDetails } from "@/lib/site"
@@ -99,46 +100,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="ep-section bg-secondary">
-        <div className="ep-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="group relative overflow-visible">
-            <img
-              src="/consua-about.jpg"
-              alt="Epeno Advisory team consultation"
-              className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)] transition-transform duration-700 group-hover:scale-[1.025]"
-            />
-            <div className="absolute -bottom-8 left-6 right-6 rounded-2xl border border-border bg-white p-6 shadow-[0_24px_80px_-56px_rgba(16,47,88,0.7)] transition-all duration-300 group-hover:-translate-y-2 group-hover:border-primary/50">
-              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-primary">
-                Epeno Advisory Private Limited
-              </p>
-              <p className="mt-2 font-heading text-xl font-extrabold text-navy">
-                Built to simplify business growth.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <p className="ep-eyebrow">Who We Are</p>
-            <h2 className="ep-title mt-4">
-              A business consultancy focused on clarity, compliance and growth.
-            </h2>
-            <div className="mt-7 grid gap-5 text-lg leading-9 text-muted-foreground">
-              <p>
-                Epeno Advisory Private Limited is a business consultancy firm
-                dedicated to helping startups, MSMEs and established companies
-                move through important growth stages with confidence.
-              </p>
-              <p>
-                Our work combines government compliance knowledge, legal and
-                registration guidance, funding preparation, strategic planning,
-                financial documentation and digital marketing support. The aim is
-                simple: reduce confusion so business owners can focus on
-                building, improving and scaling.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <About />
 
       <section className="ep-section bg-background">
         <div className="ep-container grid gap-8 lg:grid-cols-2">
