@@ -93,7 +93,7 @@ export function Faq() {
               return (
                 <div
                   key={faq.question}
-                  className="overflow-hidden rounded-2xl bg-card shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)]"
+                  className="overflow-hidden rounded-2xl border border-transparent bg-card shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-[0_18px_50px_-24px_rgba(16,47,88,0.4)]"
                 >
                   <button
                     type="button"
@@ -130,7 +130,7 @@ export function Faq() {
             alt="Man thinking about Epeno questions"
             width={1793}
             height={1504}
-            className="relative z-10 h-auto w-full max-w-2xl object-contain"
+            className="relative z-10 h-auto w-full max-w-2xl object-contain transition-transform duration-700 hover:-translate-y-2 hover:scale-[1.02]"
             priority={false}
           />
         </div>

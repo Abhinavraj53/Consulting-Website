@@ -10,6 +10,7 @@ import {
   getServiceHref,
   serviceCategories,
 } from "@/components/consua/service-data"
+import { siteDetails } from "@/lib/site"
 
 type ServiceDetailPageProps = {
   params: Promise<{
@@ -52,19 +53,19 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     <main className="overflow-x-hidden bg-background">
       <Header />
 
-      <section className="relative overflow-hidden bg-navy pb-20 pt-44 text-white md:pb-28 md:pt-52">
+      <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(245,186,75,0.2),transparent_28%),radial-gradient(circle_at_86%_12%,rgba(255,255,255,0.13),transparent_24%)]" />
         <div className="ep-container relative grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_360px] lg:items-end">
           <div>
             <p className="ep-eyebrow">{service.category}</p>
-            <h1 className="mt-5 max-w-5xl font-heading text-4xl font-extrabold leading-[1.04] tracking-tight text-balance md:text-6xl lg:text-[4.6rem]">
+            <h1 className="mt-5 max-w-5xl break-words font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-[4.4rem]">
               {service.title}
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/74 md:text-xl">
               {service.description}
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#contact" className="ep-button h-16 px-9 text-base">
+              <a href="/contact" className="ep-button h-16 px-9 text-base">
                 Talk to Epeno
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
@@ -77,8 +78,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-white/12 bg-white/[0.07] p-7 shadow-[0_30px_90px_-60px_rgba(0,0,0,0.9)] backdrop-blur">
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+          <aside className="group rounded-2xl border border-white/12 bg-white/[0.07] p-7 shadow-[0_30px_90px_-60px_rgba(0,0,0,0.9)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.1]">
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110">
               <Icon className="h-8 w-8" />
             </span>
             <p className="mt-7 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">
@@ -137,8 +138,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               </div>
               <div className="grid gap-0 md:grid-cols-2">
                 {service.benefits.map((benefit) => (
-                  <div key={benefit} className="flex gap-4 border-b border-border/70 p-6 md:p-7">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                  <div key={benefit} className="group flex gap-4 border-b border-border/70 p-6 transition-colors duration-300 hover:bg-accent/50 md:p-7">
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform group-hover:scale-110" />
                     <p className="leading-7 text-muted-foreground">{benefit}</p>
                   </div>
                 ))}
@@ -152,8 +153,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               </h2>
               <div className="mt-8 grid gap-4">
                 {service.documents.map((document) => (
-                  <div key={document} className="flex gap-4 rounded-xl bg-secondary p-5">
-                    <FileText className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                  <div key={document} className="group flex gap-4 rounded-xl border border-transparent bg-secondary p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-accent">
+                    <FileText className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform group-hover:scale-110" />
                     <p className="leading-7 text-muted-foreground">{document}</p>
                   </div>
                 ))}
@@ -167,8 +168,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               </h2>
               <div className="mt-9 grid gap-5">
                 {service.process.map((step, index) => (
-                  <div key={step} className="flex gap-5 border-t border-white/10 pt-5">
-                    <span className="font-heading text-2xl font-extrabold text-primary">
+                  <div key={step} className="group flex gap-5 border-t border-white/10 px-3 pt-5 transition-colors hover:bg-white/[0.04]">
+                    <span className="font-heading text-2xl font-extrabold text-primary transition-transform group-hover:translate-x-1">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <p className="leading-7 text-white/72">{step}</p>
@@ -277,7 +278,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                 Share your business stage and we will suggest the right
                 documentation path.
               </p>
-              <a href="tel:+919211831649" className="ep-button mt-6 h-14 w-full gap-3">
+              <a href={siteDetails.phoneHref} className="ep-button mt-6 h-14 w-full gap-3">
                 <Phone className="h-5 w-5" />
                 Call Now
               </a>
@@ -298,7 +299,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               step, required documents and expected workflow.
             </p>
           </div>
-          <a href="tel:+919211831649" className="ep-button h-16 gap-3 px-10">
+          <a href={siteDetails.phoneHref} className="ep-button gap-3 sm:h-16 sm:px-10">
             <Phone className="h-5 w-5" />
             Call Epeno
           </a>

@@ -23,8 +23,8 @@ export function Team() {
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member) => (
-            <div key={member.name} className="group text-center">
-              <div className="ep-card relative overflow-hidden">
+            <div key={member.name} className="group text-center transition-transform duration-300 hover:-translate-y-2">
+              <div className="ep-card relative overflow-hidden transition-all duration-300 group-hover:border-primary/55 group-hover:shadow-[0_24px_70px_-40px_rgba(16,47,88,0.65)]">
                 <img
                   src={member.img || "/placeholder.svg"}
                   alt={member.name}
@@ -39,7 +39,7 @@ export function Team() {
               <p className="mt-5 text-xs font-medium uppercase tracking-wide text-primary">
                 {member.role}
               </p>
-              <h3 className="mt-1 font-heading text-lg font-bold text-foreground">
+              <h3 className="mt-1 font-heading text-lg font-bold text-foreground transition-colors group-hover:text-primary">
                 {member.name}
               </h3>
             </div>

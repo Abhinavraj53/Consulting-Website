@@ -131,6 +131,22 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+  }
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button, a {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25;
+  }
+  img {
+    max-width: 100%;
   }
 }
 
@@ -139,27 +155,47 @@
     font-family: var(--font-heading);
   }
   .ep-container {
-    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
   .ep-section {
-    @apply py-24 md:py-32;
+    @apply py-16 sm:py-20 lg:py-28;
   }
   .ep-eyebrow {
     @apply font-heading text-xs font-extrabold uppercase tracking-[0.24em] text-primary;
   }
   .ep-title {
-    @apply font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground text-balance md:text-5xl;
+    @apply font-heading text-3xl font-extrabold leading-[1.12] tracking-tight text-foreground text-balance sm:text-4xl lg:text-5xl;
   }
   .ep-copy {
-    @apply text-base leading-8 text-muted-foreground md:text-lg;
+    @apply text-base leading-7 text-muted-foreground sm:leading-8 md:text-lg;
   }
   .ep-card {
     @apply rounded-2xl border border-border/80 bg-card shadow-[0_24px_80px_-56px_rgba(16,47,88,0.55)] transition-all duration-300;
   }
   .ep-card-hover {
-    @apply hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_28px_90px_-54px_rgba(16,47,88,0.72)];
+    @apply hover:-translate-y-1.5 hover:border-primary/55 hover:shadow-[0_28px_90px_-48px_rgba(16,47,88,0.72)];
+  }
+  .ep-soft-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_22px_60px_-38px_rgba(16,47,88,0.55)];
+  }
+  .ep-icon-hover {
+    @apply transition-all duration-300 group-hover:rotate-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground;
+  }
+  .ep-image-hover {
+    @apply transition-transform duration-700 group-hover:scale-[1.045];
   }
   .ep-button {
-    @apply inline-flex h-14 items-center justify-center rounded-full bg-primary px-7 font-heading text-sm font-extrabold text-primary-foreground shadow-[0_18px_38px_-24px_rgba(16,47,88,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90;
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-center font-heading text-sm font-extrabold text-primary-foreground shadow-[0_18px_38px_-24px_rgba(16,47,88,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 sm:px-7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

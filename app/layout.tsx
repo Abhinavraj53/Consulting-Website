@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins, DM_Sans, Geist_Mono } from 'next/font/google'
 import { VisitorPopup } from '@/components/consua/visitor-popup'
+import { ScrollToTop } from '@/components/consua/scroll-to-top'
+import { FloatingWhatsApp } from '@/components/consua/floating-whatsapp'
 import './globals.css'
 
 const poppins = Poppins({
@@ -50,6 +52,8 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
         {children}
+        <FloatingWhatsApp />
+        <ScrollToTop />
         <VisitorPopup />
       </body>
     </html>

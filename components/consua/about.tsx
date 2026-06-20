@@ -5,7 +5,7 @@ import { siteStats } from "./stats-data"
 export function About() {
   return (
     <section id="about" className="ep-section relative overflow-hidden bg-background">
-      <div className="ep-container grid items-center gap-20 lg:grid-cols-2">
+      <div className="ep-container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Why: a strict two-column split creates a calm credibility section after the expressive hero. */}
         <div>
           <p className="ep-eyebrow mb-4">
@@ -36,15 +36,15 @@ export function About() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="group relative">
           <img
             src="/consua-about.jpg"
             alt="Epeno Advisory consultant at work"
-            className="ml-auto aspect-[4/5] w-full max-w-lg rounded-3xl object-cover shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)]"
+            className="ep-image-hover ml-auto aspect-[4/5] w-full max-w-lg rounded-3xl object-cover shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)]"
           />
-          <div className="ep-card absolute -bottom-10 left-0 w-80 space-y-6 bg-white/95 p-8 text-foreground backdrop-blur-xl">
+          <div className="ep-card ep-soft-hover relative mx-auto -mt-8 w-[calc(100%-2rem)] space-y-5 bg-white/95 p-5 text-foreground backdrop-blur-xl sm:absolute sm:-bottom-10 sm:left-0 sm:mt-0 sm:w-80 sm:p-8">
             <div className="flex items-center gap-4">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <span className="ep-icon-hover flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
                 <TrendingUp className="h-6 w-6" />
               </span>
               <div>
@@ -58,7 +58,7 @@ export function About() {
             </div>
             <div className="h-px bg-border" />
             <div className="flex items-center gap-4">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <span className="ep-icon-hover flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
                 <Globe className="h-6 w-6" />
               </span>
               <div>

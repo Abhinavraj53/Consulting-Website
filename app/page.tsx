@@ -8,7 +8,6 @@ import { Flexibility } from "@/components/consua/flexibility"
 import { Innovation } from "@/components/consua/innovation"
 import { Partners } from "@/components/consua/partners"
 import { IncubationNetwork } from "@/components/consua/incubation-network"
-import { Team } from "@/components/consua/team"
 import { Projects } from "@/components/consua/projects"
 import { CtaBanner } from "@/components/consua/cta-banner"
 import { Testimonial } from "@/components/consua/testimonial"
@@ -22,14 +21,13 @@ export default function Page() {
       <Header />
       <Hero />
       <About />
-      <Consulting />
       <Services />
+      <IncubationNetwork />
+      <Consulting />
       <Process />
       <Flexibility />
       <Innovation />
       <Partners />
-      <IncubationNetwork />
-      <Team />
       <Projects />
       <CtaBanner />
       <Testimonial />

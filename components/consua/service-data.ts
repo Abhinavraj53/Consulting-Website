@@ -10,7 +10,8 @@ import {
 
 export const serviceCategories = [
   {
-    title: "Aarambh",
+    title: "Business Setup",
+    slug: "business-setup",
     icon: Rocket,
     description: "Company formation and registration support for founders.",
     services: [
@@ -24,7 +25,8 @@ export const serviceCategories = [
     ],
   },
   {
-    title: "Kavach",
+    title: "Brand Protection",
+    slug: "brand-protection",
     icon: ShieldCheck,
     description: "Brand, labour and IP protection essentials.",
     services: [
@@ -35,7 +37,8 @@ export const serviceCategories = [
     ],
   },
   {
-    title: "Pramanit",
+    title: "Business Credentials",
+    slug: "business-credentials",
     icon: BadgeCheck,
     description: "Certifications and registrations that build credibility.",
     services: [
@@ -55,7 +58,8 @@ export const serviceCategories = [
     ],
   },
   {
-    title: "Nidhi",
+    title: "Government Schemes",
+    slug: "government-schemes",
     icon: Landmark,
     description: "Government schemes, funds and incentive guidance.",
     services: [
@@ -69,7 +73,8 @@ export const serviceCategories = [
     ],
   },
   {
-    title: "Vikas",
+    title: "Funding Solutions",
+    slug: "funding-solutions",
     icon: HandCoins,
     description: "Funding routes for startup and MSME growth.",
     services: [
@@ -83,13 +88,15 @@ export const serviceCategories = [
     ],
   },
   {
-    title: "Vistar",
+    title: "Growth & Investment",
+    slug: "growth-investment",
     icon: Megaphone,
     description: "Market expansion and investor communication support.",
     services: ["Bhaskar ID", "Financial Deck", "Investor deck"],
   },
   {
-    title: "Prabandhit",
+    title: "Compliance Desk",
+    slug: "compliance-desk",
     icon: FileBadge,
     description: "Ongoing compliance management for registered businesses.",
     services: [
@@ -101,8 +108,15 @@ export const serviceCategories = [
   },
 ]
 
-const categoryContent = {
-  Aarambh: {
+type CategoryContent = {
+  audience: string
+  promise: string
+  benefits: string[]
+  documents: string[]
+}
+
+const categoryContent: Record<string, CategoryContent> = {
+  "Business Setup": {
     audience: "founders, partners and nonprofit promoters",
     promise: "choose the right legal structure, prepare incorporation documents and start with a clean compliance base",
     benefits: [
@@ -118,7 +132,7 @@ const categoryContent = {
       "Proposed business activity details",
     ],
   },
-  Kavach: {
+  "Brand Protection": {
     audience: "businesses protecting brand, labour and intellectual assets",
     promise: "reduce legal risk by securing registrations, records and ownership proof at the right stage",
     benefits: [
@@ -134,7 +148,7 @@ const categoryContent = {
       "Authorization or power of attorney where applicable",
     ],
   },
-  Pramanit: {
+  "Business Credentials": {
     audience: "startups, MSMEs, exporters, food businesses and growth teams",
     promise: "build trust with certifications that support funding, tenders, tax benefits and market access",
     benefits: [
@@ -150,7 +164,7 @@ const categoryContent = {
       "Business activity, product or service proof",
     ],
   },
-  Nidhi: {
+  "Government Schemes": {
     audience: "startups and MSMEs exploring government-backed support",
     promise: "identify relevant schemes, prepare applications and present the business case clearly",
     benefits: [
@@ -166,7 +180,7 @@ const categoryContent = {
       "Product, prototype or project proof where required",
     ],
   },
-  Vikas: {
+  "Funding Solutions": {
     audience: "companies planning working capital, term loans or investor funding",
     promise: "prepare a credible funding file with the right documents, numbers and lender-ready presentation",
     benefits: [
@@ -182,7 +196,7 @@ const categoryContent = {
       "Existing loan details, if any",
     ],
   },
-  Vistar: {
+  "Growth & Investment": {
     audience: "businesses preparing for market expansion and investor communication",
     promise: "turn your business story into sharper marketing, financial and investor-facing material",
     benefits: [
@@ -198,7 +212,7 @@ const categoryContent = {
       "Existing brand assets or communication material",
     ],
   },
-  Prabandhit: {
+  "Compliance Desk": {
     audience: "registered businesses that need ongoing compliance support",
     promise: "keep filings organized, deadlines visible and compliance records ready for audits or funding",
     benefits: [
@@ -214,12 +228,7 @@ const categoryContent = {
       "Bank statements and tax-related records",
     ],
   },
-} satisfies Record<string, {
-  audience: string
-  promise: string
-  benefits: string[]
-  documents: string[]
-}>
+}
 
 const slugOverrides: Record<string, string> = {
   "START-UP India Certificate": "startup-india-certification",

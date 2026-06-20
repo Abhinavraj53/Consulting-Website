@@ -43,7 +43,7 @@ export function Flexibility() {
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="grid max-w-none lg:grid-cols-[0.48fr_0.52fr]">
-        <div className="relative bg-navy px-6 py-24 text-white lg:min-h-[720px] lg:py-32 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-28 [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
+        <div className="relative bg-navy px-4 py-16 text-white sm:px-6 sm:py-20 lg:min-h-[720px] lg:py-32 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-28 lg:[clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
           <div
             aria-hidden="true"
             className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl"
@@ -59,11 +59,11 @@ export function Flexibility() {
               execution plan.
             </p>
 
-            <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-4 min-[420px]:grid-cols-3 sm:mt-12">
               {metrics.map((metric) => (
                 <div
                   key={metric.label}
-                  className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur"
+                  className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/[0.1]"
                 >
                   <p className="font-heading text-3xl font-extrabold text-primary">
                     <AnimatedCounter end={metric.value} suffix={metric.suffix} />
@@ -88,7 +88,7 @@ export function Flexibility() {
           </div>
         </div>
 
-        <div className="relative bg-background px-6 py-24 lg:py-32 lg:pl-20 lg:pr-[max(2rem,calc((100vw-80rem)/2+2rem))]">
+        <div className="relative bg-background px-4 py-16 sm:px-6 sm:py-20 lg:py-32 lg:pl-20 lg:pr-[max(2rem,calc((100vw-80rem)/2+2rem))]">
           <div
             aria-hidden="true"
             className="absolute right-16 top-16 h-32 w-32 rounded-full bg-primary/10 blur-2xl"
@@ -98,8 +98,8 @@ export function Flexibility() {
               const Icon = feature.icon
 
               return (
-                <article key={feature.title} className="ep-card ep-card-hover flex gap-5 p-6">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                <article key={feature.title} className="group ep-card ep-card-hover flex flex-col gap-4 p-5 min-[420px]:flex-row sm:gap-5 sm:p-6">
+                  <span className="ep-icon-hover flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
                     <Icon className="h-7 w-7" />
                   </span>
                   <div>

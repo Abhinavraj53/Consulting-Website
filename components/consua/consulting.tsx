@@ -1,6 +1,6 @@
 export function Consulting() {
   return (
-    <section className="relative overflow-hidden bg-secondary py-24">
+    <section className="relative overflow-hidden bg-secondary py-16 sm:py-20 lg:py-28">
       {/* Triangle grid pattern, top-left */}
       <svg
         aria-hidden="true"
@@ -38,23 +38,23 @@ export function Consulting() {
         />
       </svg>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+      <div className="ep-container relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left: images + badge */}
-        <div className="relative pl-0 lg:pl-24">
+        <div className="group relative pl-0 lg:pl-24">
           {/* small overlay image */}
           <img
             src="/consua-process-1.jpg"
             alt="Consultants reviewing a document together"
-            className="absolute -left-2 top-4 z-20 hidden w-44 rounded-2xl object-cover shadow-xl ring-8 ring-secondary sm:block lg:-left-4"
+            className="absolute -left-2 top-4 z-20 hidden w-44 rounded-2xl object-cover shadow-xl ring-8 ring-secondary transition-transform duration-500 group-hover:-translate-y-2 group-hover:-rotate-2 sm:block lg:-left-4"
           />
           {/* main image */}
           <img
             src="/consua-innovation.jpg"
             alt="Business consultant talking on the phone"
-            className="relative z-10 ml-auto w-full max-w-md rounded-3xl object-cover shadow-2xl"
+            className="relative z-10 ml-auto w-full max-w-md rounded-3xl object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.025]"
           />
           {/* experience badge */}
-          <div className="absolute bottom-12 left-4 z-20 flex h-40 w-40 flex-col justify-end rounded-3xl bg-primary p-6 text-primary-foreground shadow-2xl lg:left-12">
+          <div className="absolute bottom-5 left-2 z-20 flex h-32 w-32 flex-col justify-end rounded-3xl bg-primary p-4 text-primary-foreground shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-2 sm:bottom-12 sm:left-4 sm:h-40 sm:w-40 sm:p-6 lg:left-12">
             <span
               aria-hidden="true"
               className="absolute left-6 top-3 font-heading text-[5.5rem] font-bold leading-none text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.85)]"
@@ -80,14 +80,14 @@ export function Consulting() {
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <article className="bg-card p-8 shadow-lg ring-1 ring-border">
-              <TargetingIcon className="h-12 w-12 text-primary" />
+            <article className="group ep-soft-hover bg-card p-8 shadow-lg ring-1 ring-border">
+              <TargetingIcon className="h-12 w-12 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
               <h3 className="mt-6 font-heading text-xl font-bold leading-snug text-foreground">
                 Funding &amp; Government Benefits
               </h3>
             </article>
-            <article className="bg-card p-8 shadow-lg ring-1 ring-border">
-              <IdeasIcon className="h-12 w-12 text-primary" />
+            <article className="group ep-soft-hover bg-card p-8 shadow-lg ring-1 ring-border">
+              <IdeasIcon className="h-12 w-12 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" />
               <h3 className="mt-6 font-heading text-xl font-bold leading-snug text-foreground">
                 Registrations &amp; Certifications
               </h3>

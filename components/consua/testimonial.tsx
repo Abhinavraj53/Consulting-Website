@@ -3,17 +3,17 @@ import { Star, Quote } from "lucide-react"
 export function Testimonial() {
   return (
     <section className="bg-background py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[320px_1fr]">
+      <div className="group mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[320px_1fr]">
         <img
           src="/consua-testimonial.png"
           alt="Happy Epeno client"
-          className="mx-auto w-72 object-contain"
+          className="mx-auto w-72 object-contain transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-[1.03]"
         />
 
-        <div className="relative">
+        <div className="relative rounded-3xl border border-transparent p-6 transition-all duration-300 group-hover:border-border group-hover:bg-white group-hover:shadow-[0_24px_80px_-55px_rgba(16,47,88,0.55)] sm:p-8">
           <div className="flex items-center gap-1 text-primary">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-current" />
+              <Star key={i} className="h-4 w-4 fill-current transition-transform duration-300 group-hover:-translate-y-0.5" style={{ transitionDelay: `${i * 35}ms` }} />
             ))}
           </div>
           <h3 className="mt-4 font-heading text-2xl font-bold text-foreground">

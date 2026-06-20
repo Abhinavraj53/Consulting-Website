@@ -63,21 +63,21 @@ export function Process() {
               return (
                 <article
                   key={step.num}
-                  className="ep-card ep-card-hover relative overflow-hidden p-6"
+                  className="group ep-card ep-card-hover relative overflow-hidden p-6"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="relative">
                       <img
                         src={step.img}
                         alt={step.title}
-                        className="h-28 w-28 rounded-2xl object-cover"
+                        className="h-28 w-28 rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <span className="absolute -bottom-3 -right-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary font-heading text-sm font-extrabold text-primary-foreground ring-4 ring-card">
+                      <span className="absolute -bottom-3 -right-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary font-heading text-sm font-extrabold text-primary-foreground ring-4 ring-card transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
                         {step.num}
                       </span>
                     </div>
 
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-primary">
+                    <span className="ep-icon-hover flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-primary">
                       <Icon className="h-6 w-6" />
                     </span>
                   </div>

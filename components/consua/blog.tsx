@@ -59,8 +59,8 @@ export function Blog() {
                 <h3 className="mt-3 font-heading text-xl font-extrabold leading-snug text-foreground text-balance">
                   {post.title}
                 </h3>
-                <a href={post.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <a href={post.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-navy">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:translate-x-1">
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                   Read More

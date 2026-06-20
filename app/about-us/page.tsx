@@ -4,6 +4,7 @@ import { Header } from "@/components/consua/header"
 import { Footer } from "@/components/consua/footer"
 import { AnimatedCounter } from "@/components/consua/animated-counter"
 import { primaryStats } from "@/components/consua/stats-data"
+import { siteDetails } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "About Us | Epeno Advisory",
@@ -50,12 +51,12 @@ export default function AboutUsPage() {
     <main className="overflow-x-hidden bg-background">
       <Header />
 
-      <section className="relative overflow-hidden bg-navy pb-20 pt-44 text-white md:pb-28 md:pt-52">
+      <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_16%,rgba(245,186,75,0.2),transparent_28%),radial-gradient(circle_at_84%_12%,rgba(255,255,255,0.12),transparent_24%)]" />
         <div className="ep-container relative grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_380px] lg:items-end">
           <div>
             <p className="ep-eyebrow">About Epeno</p>
-            <h1 className="mt-5 max-w-5xl font-heading text-4xl font-extrabold leading-[1.04] tracking-tight text-balance md:text-6xl lg:text-[4.6rem]">
+            <h1 className="mt-5 max-w-5xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-[4.4rem]">
               Trusted guidance for startups and growing businesses.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-white/74 md:text-xl">
@@ -70,7 +71,7 @@ export default function AboutUsPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex h-16 items-center rounded-full border border-white/20 px-8 font-heading text-sm font-extrabold text-white transition-colors hover:border-primary hover:text-primary"
               >
                 Contact Epeno
@@ -78,7 +79,7 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-white/12 bg-white/[0.07] p-7 shadow-[0_30px_90px_-60px_rgba(0,0,0,0.9)] backdrop-blur">
+          <aside className="rounded-2xl border border-white/12 bg-white/[0.07] p-7 shadow-[0_30px_90px_-60px_rgba(0,0,0,0.9)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.1]">
             <p className="font-heading text-lg font-extrabold text-primary">
               सोच हमारी, कामयाबी आपकी
             </p>
@@ -100,13 +101,13 @@ export default function AboutUsPage() {
 
       <section className="ep-section bg-secondary">
         <div className="ep-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative">
+          <div className="group relative overflow-visible">
             <img
               src="/consua-about.jpg"
               alt="Epeno Advisory team consultation"
-              className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)]"
+              className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)] transition-transform duration-700 group-hover:scale-[1.025]"
             />
-            <div className="absolute -bottom-8 left-6 right-6 rounded-2xl border border-border bg-white p-6 shadow-[0_24px_80px_-56px_rgba(16,47,88,0.7)]">
+            <div className="absolute -bottom-8 left-6 right-6 rounded-2xl border border-border bg-white p-6 shadow-[0_24px_80px_-56px_rgba(16,47,88,0.7)] transition-all duration-300 group-hover:-translate-y-2 group-hover:border-primary/50">
               <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-primary">
                 Epeno Advisory Private Limited
               </p>
@@ -141,7 +142,7 @@ export default function AboutUsPage() {
 
       <section className="ep-section bg-background">
         <div className="ep-container grid gap-8 lg:grid-cols-2">
-          <article className="ep-card p-8 md:p-10">
+          <article className="ep-card ep-card-hover p-8 md:p-10">
             <p className="ep-eyebrow">Mission</p>
             <h2 className="mt-4 font-heading text-3xl font-extrabold text-foreground">
               Empower businesses with complete support.
@@ -154,7 +155,7 @@ export default function AboutUsPage() {
             </p>
           </article>
 
-          <article className="ep-card p-8 md:p-10">
+          <article className="ep-card ep-card-hover p-8 md:p-10">
             <p className="ep-eyebrow">Vision</p>
             <h2 className="mt-4 font-heading text-3xl font-extrabold text-foreground">
               Become the advisory partner businesses trust.
@@ -179,8 +180,8 @@ export default function AboutUsPage() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {strengths.map((item) => (
-              <article key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.06] p-7">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+              <article key={item.title} className="group rounded-2xl border border-white/10 bg-white/[0.06] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/45 hover:bg-white/[0.1]">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110">
                   <item.icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-6 font-heading text-2xl font-extrabold">
@@ -197,8 +198,8 @@ export default function AboutUsPage() {
         <div className="ep-container">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {primaryStats.map((stat) => (
-              <div key={stat.label} className="ep-card p-7 text-center">
-                <p className="font-heading text-5xl font-extrabold text-navy">
+              <div key={stat.label} className="group ep-card ep-card-hover p-7 text-center">
+                <p className="font-heading text-5xl font-extrabold text-navy transition-colors duration-300 group-hover:text-primary">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-3 text-sm font-extrabold uppercase tracking-[0.16em] text-muted-foreground">
@@ -218,8 +219,8 @@ export default function AboutUsPage() {
               </div>
               <div className="flex flex-wrap gap-3">
                 {focusAreas.map((area) => (
-                  <span key={area} className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-bold text-foreground">
-                    <BadgeCheck className="h-4 w-4 text-primary" />
+                  <span key={area} className="group inline-flex items-center gap-2 rounded-full border border-transparent bg-secondary px-4 py-2 text-sm font-bold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-accent">
+                    <BadgeCheck className="h-4 w-4 text-primary transition-transform group-hover:scale-110" />
                     {area}
                   </span>
                 ))}
@@ -237,12 +238,11 @@ export default function AboutUsPage() {
               Ready to simplify your business journey?
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/70">
-              Visit us at A-451, Tower - A, IThum Heights, Sector 62, Noida -
-              201301, or speak with Epeno for consultation.
+              Visit us at {siteDetails.address}, or speak with Epeno for a consultation.
             </p>
           </div>
-          <a href="tel:+919211831649" className="ep-button h-16 gap-3 px-10">
-            +91 9211831649
+          <a href={siteDetails.phoneHref} className="ep-button gap-3 sm:h-16 sm:px-10">
+            {siteDetails.phoneDisplay}
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>

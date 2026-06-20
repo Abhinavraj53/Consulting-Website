@@ -2,18 +2,19 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Header } from "@/components/consua/header"
 import { Footer } from "@/components/consua/footer"
 import { allServices, getServiceHref, serviceCategories } from "@/components/consua/service-data"
+import { siteDetails } from "@/lib/site"
 
 export default function ServicesPage() {
   return (
     <main className="overflow-x-hidden bg-background">
       <Header />
 
-      <section className="relative overflow-hidden bg-navy pb-24 pt-44 text-white md:pb-28 md:pt-52">
+      <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(245,186,75,0.18),transparent_28%),radial-gradient(circle_at_82%_10%,rgba(255,255,255,0.12),transparent_24%)]" />
         <div className="ep-container relative">
           <div className="max-w-4xl">
             <p className="ep-eyebrow">Epeno Services</p>
-            <h1 className="mt-5 font-heading text-5xl font-extrabold leading-[1.02] tracking-tight text-balance md:text-6xl lg:text-[4.8rem]">
+            <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-[4.5rem]">
               Business support services built for founders, MSMEs and growing companies.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/72 md:text-xl">
@@ -32,9 +33,9 @@ export default function ServicesPage() {
             ].map(([value, label]) => (
               <div
                 key={label}
-                className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur"
+                className="group rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:bg-white/[0.1]"
               >
-                <p className="font-heading text-4xl font-extrabold text-primary">
+                <p className="font-heading text-4xl font-extrabold text-primary transition-transform duration-300 group-hover:scale-105">
                   {value}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-white/68">
@@ -52,7 +53,7 @@ export default function ServicesPage() {
             {serviceCategories.map((category) => (
               <a
                 key={category.title}
-                href={`#${category.title.toLowerCase()}`}
+                href={`#${category.slug}`}
                 className="group rounded-2xl border border-border bg-white p-5 shadow-[0_18px_60px_-48px_rgba(16,47,88,0.72)] transition-all duration-300 hover:-translate-y-1 hover:border-primary"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/14 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -83,7 +84,7 @@ export default function ServicesPage() {
             {serviceCategories.map((category) => (
               <section
                 key={category.title}
-                id={category.title.toLowerCase()}
+                id={category.slug}
                 className="scroll-mt-36"
               >
                 <div className="mb-7 flex flex-col justify-between gap-5 border-b border-border pb-6 md:flex-row md:items-end">
@@ -153,8 +154,8 @@ export default function ServicesPage() {
               right registration, funding, certification or compliance path.
             </p>
           </div>
-          <a href="tel:+4733378901" className="ep-button h-16 px-10">
-            Contact Epeno
+          <a href={siteDetails.phoneHref} className="ep-button sm:h-16 sm:px-10">
+            {siteDetails.phoneDisplay}
           </a>
         </div>
       </section>
@@ -163,8 +164,8 @@ export default function ServicesPage() {
         <div className="ep-container grid gap-4 sm:grid-cols-3">
           {["Clear documentation", "Eligibility-first advice", "End-to-end follow-up"].map(
             (item) => (
-              <div key={item} className="flex items-center gap-3 text-foreground">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
+              <div key={item} className="group flex items-center gap-3 rounded-xl px-3 py-2 text-foreground transition-colors hover:bg-accent">
+                <CheckCircle2 className="h-5 w-5 text-primary transition-transform group-hover:scale-110" />
                 <span className="font-heading font-extrabold">{item}</span>
               </div>
             ),
