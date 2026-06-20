@@ -267,6 +267,10 @@ export const allServices = serviceCategories.flatMap((category) =>
     icon: category.icon,
     slug,
     href: `/services/${slug}`,
+    heroImage: `/service-heroes/${slug}.jpg`,
+    heroPosition: ["center", "42% center", "58% center", "center 42%"][
+      index % 4
+    ],
     description: `${service} support by Epeno for ${content.audience}. We help you ${content.promise}.`,
     summary: `Epeno helps with ${service} through eligibility checks, document preparation, filing guidance and follow-up support.`,
     benefits: content.benefits,

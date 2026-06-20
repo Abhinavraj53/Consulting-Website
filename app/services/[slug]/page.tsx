@@ -53,53 +53,72 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     <main className="overflow-x-hidden bg-background">
       <Header />
 
-      <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(245,186,75,0.2),transparent_28%),radial-gradient(circle_at_86%_12%,rgba(255,255,255,0.13),transparent_24%)]" />
-        <div className="ep-container relative grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_360px] lg:items-end">
-          <div>
-            <p className="ep-eyebrow">{service.category}</p>
-            <h1 className="mt-5 max-w-5xl break-words font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-[4.4rem]">
+      <section className="relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
+        <img
+          src={service.heroImage}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: service.heroPosition }}
+        />
+        <div className="absolute inset-0 bg-navy/42" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/90 to-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/78 via-transparent to-navy/45" />
+        <div className="absolute inset-y-0 left-0 w-[72%] bg-[radial-gradient(circle_at_18%_38%,rgba(245,186,75,0.18),transparent_34%)]" />
+
+        <div className="ep-container relative grid min-h-[680px] gap-10 pb-16 pt-36 sm:pt-44 lg:grid-cols-[minmax(0,1fr)_350px] lg:items-end lg:pb-20 lg:pt-52">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2 backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_14px_rgba(245,186,75,0.9)]" />
+              <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-primary">
+                {service.category}
+              </p>
+            </div>
+            <h1 className="mt-6 max-w-4xl break-words font-heading text-4xl font-extrabold leading-[1.03] tracking-[-0.045em] text-balance sm:text-5xl md:text-6xl lg:text-[4.15rem]">
               {service.title}
             </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/74 md:text-xl">
+            <p className="mt-6 max-w-3xl text-base leading-8 text-white/76 sm:text-lg md:text-xl">
               {service.description}
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a href="/contact" className="ep-button h-16 px-9 text-base">
+            <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
+              <a href="/contact" className="ep-button gap-2 sm:h-15 sm:px-8 sm:text-base">
                 Talk to Epeno
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
                 href="/services"
-                className="inline-flex h-16 items-center rounded-full border border-white/20 px-8 font-heading text-sm font-extrabold text-white transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex min-h-12 items-center rounded-full border border-white/25 bg-white/[0.06] px-6 py-3 font-heading text-sm font-extrabold text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-white/[0.1] hover:text-primary sm:px-8"
               >
                 View all services
               </a>
             </div>
           </div>
 
-          <aside className="group rounded-2xl border border-white/12 bg-white/[0.07] p-7 shadow-[0_30px_90px_-60px_rgba(0,0,0,0.9)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.1]">
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110">
-              <Icon className="h-8 w-8" />
-            </span>
-            <p className="mt-7 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">
-              Service Desk
-            </p>
-            <h2 className="mt-3 font-heading text-2xl font-extrabold text-white">
-              Documentation-led support for better approval readiness.
-            </h2>
-            <div className="mt-6 grid gap-3 text-sm font-semibold text-white/72">
-              <span className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                Eligibility review
+          <aside className="group overflow-hidden rounded-3xl border border-white/15 bg-[#0b294d]/72 shadow-[0_30px_90px_-48px_rgba(0,0,0,0.85)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50">
+            <div className="border-b border-white/10 p-6">
+              <div className="flex items-center justify-between gap-4">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105">
+                  <Icon className="h-7 w-7" />
+                </span>
+                <span className="rounded-full border border-white/12 bg-white/[0.06] px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-white/62">
+                  Service Desk
+                </span>
+              </div>
+              <h2 className="mt-5 font-heading text-xl font-extrabold leading-snug text-white">
+                A clearer path from eligibility to final filing.
+              </h2>
+            </div>
+            <div className="grid gap-1 p-4 text-sm font-semibold text-white/75">
+              <span className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.06]">
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
+                Eligibility and scope review
               </span>
-              <span className="flex items-center gap-3">
-                <FileText className="h-5 w-5 text-primary" />
-                Document preparation
+              <span className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.06]">
+                <FileText className="h-5 w-5 shrink-0 text-primary" />
+                Professional document preparation
               </span>
-              <span className="flex items-center gap-3">
-                <ShieldCheck className="h-5 w-5 text-primary" />
-                Filing follow-up
+              <span className="flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.06]">
+                <ShieldCheck className="h-5 w-5 shrink-0 text-primary" />
+                Filing and status follow-up
               </span>
             </div>
           </aside>
