@@ -2,29 +2,51 @@
 
 import { FormEvent, useState } from "react"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
-import { siteDetails } from "@/lib/site"
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const form = new FormData(event.currentTarget)
-    const message = [
-      "Hello Epeno, I would like a business consultation.",
-      `Name: ${form.get("name")}`,
-      `Phone: ${form.get("phone")}`,
-      `Email: ${form.get("email")}`,
-      `Service: ${form.get("service")}`,
-      `Message: ${form.get("message")}`,
-    ].join("\n")
+    setError("")
+    setSubmitted(false)
+    setSubmitting(true)
 
-    window.open(
-      `${siteDetails.whatsappHref}?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer",
-    )
-    setSubmitted(true)
+    const formElement = event.currentTarget
+    const form = new FormData(formElement)
+    const payload = {
+      name: String(form.get("name") ?? ""),
+      phone: String(form.get("phone") ?? ""),
+      email: String(form.get("email") ?? ""),
+      service: String(form.get("service") ?? ""),
+      message: String(form.get("message") ?? ""),
+      source: "Contact page",
+    }
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+      const result = (await response.json()) as { error?: string }
+
+      if (!response.ok) {
+        throw new Error(result.error || "We could not save your enquiry.")
+      }
+
+      formElement.reset()
+      setSubmitted(true)
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "We could not save your enquiry. Please try again.",
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -94,12 +116,19 @@ export function ContactForm() {
         />
       </label>
 
-      <button type="submit" className="ep-button group w-full gap-3 sm:w-fit sm:px-9">
-        {submitted ? (
-          <>
-            WhatsApp opened
-            <CheckCircle2 className="h-5 w-5" />
-          </>
+      {error ? (
+        <p role="alert" className="text-sm font-semibold text-red-600">
+          {error}
+        </p>
+      ) : null}
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="ep-button group w-full gap-3 disabled:cursor-not-allowed disabled:opacity-65 sm:w-fit sm:px-9"
+      >
+        {submitting ? (
+          "Saving enquiry..."
         ) : (
           <>
             Send enquiry
@@ -107,6 +136,16 @@ export function ContactForm() {
           </>
         )}
       </button>
+
+      {submitted ? (
+        <div
+          role="status"
+          className="flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-4 text-sm font-semibold leading-6 text-green-800"
+        >
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+          Form submitted successfully. We will contact you shortly.
+        </div>
+      ) : null}
     </form>
   )
 }

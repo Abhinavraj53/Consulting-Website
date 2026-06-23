@@ -99,7 +99,11 @@ export function Header() {
         }`}
         aria-label="Epeno home"
       >
-        <Logo large className="text-foreground" />
+        <Logo
+          large={!scrolled}
+          compact={scrolled}
+          className="text-foreground"
+        />
       </a>
 
       <div
@@ -156,7 +160,11 @@ export function Header() {
           }`}
         >
           <a href="/" aria-label="Epeno home" className="relative z-20 xl:hidden">
-            <Logo compact className={scrolled || mobileOpen ? "text-foreground" : "text-white"} />
+            <Logo
+              compact={!scrolled}
+              mini={scrolled}
+              className={scrolled || mobileOpen ? "text-foreground" : "text-white"}
+            />
           </a>
 
           <nav className="hidden items-center gap-7 xl:flex 2xl:gap-9">
@@ -179,8 +187,9 @@ export function Header() {
           </nav>
 
           <div className="hidden xl:block">
-            <a href={siteDetails.phoneHref} className="ep-button min-w-[178px] rounded-lg">
-              Get Consultant
+            <a href={siteDetails.phoneHref} className="ep-button min-w-[160px] gap-2 rounded-lg">
+              <Phone className="h-4 w-4" />
+              Call Now
             </a>
           </div>
 
@@ -266,7 +275,8 @@ export function Header() {
               className="ep-button mt-3 rounded-xl"
               onClick={() => setMobileOpen(false)}
             >
-              Get Consultant
+              <Phone className="mr-2 h-4 w-4" />
+              Call Now
             </a>
           </nav>
         </div>

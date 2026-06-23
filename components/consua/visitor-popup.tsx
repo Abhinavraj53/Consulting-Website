@@ -1,7 +1,7 @@
 "use client"
 
 import { FormEvent, useEffect, useState } from "react"
-import { BadgeCheck, Building2, CheckCircle2, CircleX, Landmark, MessageCircle } from "lucide-react"
+import { ArrowRight, BadgeCheck, Building2, CheckCircle2, CircleX, Landmark } from "lucide-react"
 import { AnimatedCounter } from "./animated-counter"
 import { siteStats } from "./stats-data"
 import { siteDetails } from "@/lib/site"
@@ -17,6 +17,8 @@ const networkItems = [
 export function VisitorPopup() {
   const [open, setOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState("")
 
   useEffect(() => {
     if (window.sessionStorage.getItem(storageKey) === "true") {
@@ -32,19 +34,45 @@ export function VisitorPopup() {
     setOpen(false)
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const form = new FormData(event.currentTarget)
-    const message = [
-      "Hello Epeno, I would like a consultation.",
-      `Name: ${form.get("name")}`,
-      `Email: ${form.get("email")}`,
-      `Phone: ${form.get("phone")}`,
-    ].join("\n")
+    setError("")
+    setSubmitted(false)
+    setSubmitting(true)
 
-    setSubmitted(true)
-    window.open(`${siteDetails.whatsappHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer")
-    window.setTimeout(closePopup, 700)
+    const formElement = event.currentTarget
+    const form = new FormData(formElement)
+    const payload = {
+      name: String(form.get("name") ?? ""),
+      email: String(form.get("email") ?? ""),
+      phone: String(form.get("phone") ?? ""),
+      service: "General consultation",
+      message: "Consultation request submitted from the visitor popup.",
+      source: "Visitor popup",
+    }
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+      const result = (await response.json()) as { error?: string }
+
+      if (!response.ok) {
+        throw new Error(result.error || "We could not save your enquiry.")
+      }
+
+      formElement.reset()
+      setSubmitted(true)
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "We could not save your enquiry. Please try again.",
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (!open) {
@@ -125,8 +153,8 @@ export function VisitorPopup() {
               Let&apos;s discuss what your business needs next.
             </h2>
             <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground sm:text-base">
-              Share your details and continue the conversation directly with
-              our team on WhatsApp.
+              Share your details and our consultation team will contact you
+              shortly.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-6 grid gap-3.5">
@@ -153,11 +181,30 @@ export function VisitorPopup() {
               />
               <button
                 type="submit"
-                className="group flex h-12 items-center justify-center gap-2 rounded-xl bg-navy font-heading text-sm font-extrabold text-white transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground sm:h-13 sm:text-base"
+                disabled={submitting}
+                className="group flex h-12 items-center justify-center gap-2 rounded-xl bg-navy font-heading text-sm font-extrabold text-white transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-65 sm:h-13 sm:text-base"
               >
-                <MessageCircle className="h-4 w-4" />
-                {submitted ? "WhatsApp opened" : "Continue on WhatsApp"}
+                {submitted ? (
+                  <CheckCircle2 className="h-4 w-4" />
+                ) : (
+                  <ArrowRight className="h-4 w-4" />
+                )}
+                {submitting ? "Saving enquiry..." : "Submit enquiry"}
               </button>
+              {submitted ? (
+                <div
+                  role="status"
+                  className="flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-4 text-sm font-semibold leading-6 text-green-800"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+                  Form submitted successfully. We will contact you shortly.
+                </div>
+              ) : null}
+              {error ? (
+                <p role="alert" className="text-sm font-semibold text-red-600">
+                  {error}
+                </p>
+              ) : null}
             </form>
 
             <a

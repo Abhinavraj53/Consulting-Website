@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Header } from "@/components/consua/header"
 import { Footer } from "@/components/consua/footer"
-import { allServices, getServiceHref, serviceCategories } from "@/components/consua/service-data"
+import { allServices, serviceCategories } from "@/components/consua/service-data"
 import { siteDetails } from "@/lib/site"
 
 export default function ServicesPage() {
@@ -10,7 +10,15 @@ export default function ServicesPage() {
       <Header />
 
       <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(245,186,75,0.18),transparent_28%),radial-gradient(circle_at_82%_10%,rgba(255,255,255,0.12),transparent_24%)]" />
+        <img
+          src="/consua-innovation.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[62%_center]"
+        />
+        <div className="absolute inset-0 bg-navy/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/92 to-navy/48" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-navy/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(245,186,75,0.2),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(255,255,255,0.12),transparent_25%)]" />
         <div className="ep-container relative">
           <div className="max-w-4xl">
             <p className="ep-eyebrow">Epeno Services</p>
@@ -49,24 +57,52 @@ export default function ServicesPage() {
 
       <section className="bg-secondary py-16">
         <div className="ep-container">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-7">
-            {serviceCategories.map((category) => (
-              <a
-                key={category.title}
-                href={`#${category.slug}`}
-                className="group rounded-2xl border border-border bg-white p-5 shadow-[0_18px_60px_-48px_rgba(16,47,88,0.72)] transition-all duration-300 hover:-translate-y-1 hover:border-primary"
-              >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/14 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <category.icon className="h-6 w-6" />
-                </span>
-                <h2 className="mt-5 font-heading text-xl font-extrabold uppercase text-foreground">
-                  {category.title}
-                </h2>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {category.description}
-                </p>
-              </a>
-            ))}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {serviceCategories.map((category) => {
+              const categoryImage = allServices.find(
+                (service) => service.category === category.title,
+              )
+
+              return (
+                <a
+                  key={category.title}
+                  href={`#${category.slug}`}
+                  className="group flex min-h-[350px] min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-[0_18px_60px_-48px_rgba(16,47,88,0.72)] transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_24px_65px_-42px_rgba(16,47,88,0.62)]"
+                >
+                  <span className="relative block h-44 shrink-0 overflow-hidden bg-navy">
+                    {categoryImage ? (
+                      <img
+                        src={categoryImage.heroImage}
+                        alt={`${category.title} services`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.07]"
+                        style={{ objectPosition: categoryImage.heroPosition }}
+                      />
+                    ) : null}
+                    <span className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
+                    <span className="absolute bottom-4 left-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_14px_30px_-18px_rgba(0,0,0,0.85)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
+                      <category.icon className="h-6 w-6" />
+                    </span>
+                    <span className="absolute bottom-4 right-4 rounded-full border border-white/20 bg-navy/65 px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.12em] text-white backdrop-blur-md">
+                      {category.services.length} services
+                    </span>
+                  </span>
+
+                  <span className="flex flex-1 flex-col p-5 sm:p-6">
+                    <span className="break-words font-heading text-lg font-extrabold uppercase leading-[1.35] tracking-[-0.015em] text-foreground sm:text-xl">
+                      {category.title}
+                    </span>
+                    <span className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {category.description}
+                    </span>
+                    <span className="mt-auto inline-flex items-center gap-2 pt-5 font-heading text-xs font-extrabold uppercase tracking-[0.1em] text-navy transition-colors group-hover:text-primary">
+                      Explore category
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -100,39 +136,60 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                  {category.services.map((service) => (
+                  {allServices
+                    .filter((service) => service.category === category.title)
+                    .map((service) => (
                     <article
-                      key={service}
-                      className="ep-card ep-card-hover group flex min-h-48 flex-col justify-between p-7"
+                      key={service.slug}
+                      className="ep-card ep-card-hover group flex min-h-[430px] flex-col overflow-hidden"
                     >
-                      <div>
+                      <a
+                        href={service.href}
+                        className="relative block h-48 shrink-0 overflow-hidden bg-navy"
+                        aria-label={`View ${service.title} details`}
+                      >
+                        <img
+                          src={service.heroImage}
+                          alt={`${service.title} service`}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                          style={{ objectPosition: service.heroPosition }}
+                        />
+                        <span className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/5 to-transparent transition-colors duration-300 group-hover:from-navy/60" />
+                        <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-navy/72 px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+                          <category.icon className="h-3.5 w-3.5 text-primary" />
+                          {category.title}
+                        </span>
+                      </a>
+
+                      <div className="flex flex-1 flex-col p-6">
                         <div className="flex items-start gap-4">
-                          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/14 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/14 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                             <category.icon className="h-6 w-6" />
                           </span>
-                          <div>
-                            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-primary">
-                              {category.title}
+                          <div className="min-w-0">
+                            <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-primary">
+                              Epeno service
                             </p>
-                            <h4 className="mt-2 font-heading text-xl font-extrabold leading-snug text-foreground">
-                              {service}
+                            <h4 className="mt-1.5 break-words font-heading text-xl font-extrabold leading-snug text-foreground">
+                              {service.title}
                             </h4>
                           </div>
                         </div>
-                        <p className="mt-5 text-sm leading-7 text-muted-foreground">
+                        <p className="mt-4 line-clamp-3 text-sm leading-6 text-muted-foreground">
                           Epeno helps with document preparation, eligibility
                           review, filing guidance and follow-up support for this
                           service.
                         </p>
-                      </div>
 
-                      <a
-                        href={getServiceHref(service)}
-                        className="mt-7 inline-flex items-center gap-2 font-heading text-sm font-extrabold text-navy transition-colors hover:text-primary"
-                      >
-                        View details
-                        <ArrowRight className="h-4 w-4" />
-                      </a>
+                        <a
+                          href={service.href}
+                          className="mt-auto inline-flex items-center gap-2 pt-6 font-heading text-sm font-extrabold text-navy transition-colors hover:text-primary"
+                        >
+                          View details
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </a>
+                      </div>
                     </article>
                   ))}
                 </div>

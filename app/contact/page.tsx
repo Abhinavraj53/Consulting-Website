@@ -45,7 +45,15 @@ export default function ContactPage() {
       <Header />
 
       <section className="relative overflow-hidden bg-navy pb-20 pt-44 text-white sm:pt-48 lg:pb-24 lg:pt-56">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(245,186,75,0.22),transparent_30%),radial-gradient(circle_at_85%_15%,rgba(255,255,255,0.12),transparent_25%)]" />
+        <img
+          src="/consua-project.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[68%_center]"
+        />
+        <div className="absolute inset-0 bg-navy/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/92 to-navy/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/88 via-transparent to-navy/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(245,186,75,0.22),transparent_31%),radial-gradient(circle_at_85%_15%,rgba(255,255,255,0.12),transparent_25%)]" />
         <div className="ep-container relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
           <div>
             <p className="ep-eyebrow">Contact Epeno</p>
@@ -109,8 +117,8 @@ export default function ContactPage() {
                 How can we help your business?
               </h2>
               <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-                Submit the form and your details will open securely in WhatsApp,
-                ready to send to the Epeno consultation team.
+                Submit the form and your enquiry will be saved securely for the
+                Epeno consultation team to review.
               </p>
               <div className="mt-8">
                 <ContactForm />

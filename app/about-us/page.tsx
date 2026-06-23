@@ -53,7 +53,15 @@ export default function AboutUsPage() {
       <Header />
 
       <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_16%,rgba(245,186,75,0.2),transparent_28%),radial-gradient(circle_at_84%_12%,rgba(255,255,255,0.12),transparent_24%)]" />
+        <img
+          src="/consua-innovation.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[62%_center]"
+        />
+        <div className="absolute inset-0 bg-navy/42" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/91 to-navy/48" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/88 via-transparent to-navy/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_16%,rgba(245,186,75,0.2),transparent_30%),radial-gradient(circle_at_84%_12%,rgba(255,255,255,0.12),transparent_24%)]" />
         <div className="ep-container relative grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_380px] lg:items-end">
           <div>
             <p className="ep-eyebrow">About Epeno</p>
