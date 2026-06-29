@@ -38,7 +38,7 @@ export function Faq() {
   const [open, setOpen] = useState(0)
 
   return (
-    <section className="relative overflow-hidden bg-background py-20 md:py-28">
+    <section className="relative overflow-hidden bg-background pb-0 pt-20 md:pt-28">
       {/* Red liquid blob bottom-left */}
       <svg
         aria-hidden="true"
@@ -68,9 +68,9 @@ export function Faq() {
       <DotGrid className="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 md:block" />
       <DotGrid className="pointer-events-none absolute bottom-16 left-1/2 hidden -translate-x-1/2 md:block" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(380px,0.92fr)] lg:gap-14 lg:px-8">
         {/* Left: content */}
-        <div className="relative">
+        <div className="relative z-10 min-w-0">
           {/* Light blue circle behind heading */}
           <div
             aria-hidden="true"
@@ -81,13 +81,13 @@ export function Faq() {
               Basic FAQ
             </span>
           </p>
-          <h2 className="font-heading text-4xl font-bold leading-tight text-foreground text-balance md:text-5xl">
+          <h2 className="max-w-2xl font-heading text-4xl font-bold leading-tight text-foreground text-balance md:text-5xl">
             Common Questions
             <br />
             about Epeno
           </h2>
 
-          <div className="mt-10 flex flex-col gap-5">
+          <div className="mt-10 flex max-w-2xl flex-col gap-4">
             {faqs.map((faq, i) => {
               const isOpen = open === i
               return (
@@ -105,7 +105,9 @@ export function Faq() {
                         : "text-foreground"
                     }`}
                   >
-                    <span className="font-heading text-lg font-semibold">{faq.question}</span>
+                    <span className="min-w-0 font-heading text-base font-semibold leading-6 sm:text-lg">
+                      {faq.question}
+                    </span>
                     {isOpen ? (
                       <ChevronUp className="h-5 w-5 shrink-0" />
                     ) : (
@@ -124,13 +126,13 @@ export function Faq() {
         </div>
 
         {/* Right: FAQ visual */}
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex min-h-[410px] min-w-0 self-end items-end justify-center sm:min-h-[500px] lg:min-h-[640px]">
           <Image
-            src="/epeno-faq-cutout.png"
+            src="/Hero%20left.png"
             alt="Man thinking about Epeno questions"
-            width={1793}
-            height={1504}
-            className="relative z-10 h-auto w-full max-w-2xl object-contain transition-transform duration-700 hover:-translate-y-2 hover:scale-[1.02]"
+            width={1024}
+            height={1024}
+            className="relative z-10 -mb-px h-auto w-full max-w-[585px] object-contain object-bottom drop-shadow-[0_28px_40px_rgba(16,47,88,0.16)] transition-transform duration-700 hover:-translate-y-2 hover:scale-[1.015]"
             priority={false}
           />
         </div>

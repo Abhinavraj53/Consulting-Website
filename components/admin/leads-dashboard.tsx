@@ -6,6 +6,7 @@ import {
   Clipboard,
   Mail,
   Search,
+  Trash2,
   Users,
 } from "lucide-react"
 
@@ -22,9 +23,12 @@ export type AdminLead = {
   updatedAt: string
 }
 
-export function LeadsDashboard({ leads }: { leads: AdminLead[] }) {
+export function LeadsDashboard({ leads: initialLeads }: { leads: AdminLead[] }) {
+  const [leads, setLeads] = useState(initialLeads)
   const [query, setQuery] = useState("")
   const [copied, setCopied] = useState("")
+  const [deletingId, setDeletingId] = useState("")
+  const [deleteError, setDeleteError] = useState("")
 
   const filteredLeads = useMemo(() => {
     const term = query.trim().toLowerCase()
@@ -44,6 +48,35 @@ export function LeadsDashboard({ leads }: { leads: AdminLead[] }) {
     await navigator.clipboard.writeText(phone)
     setCopied(phone)
     window.setTimeout(() => setCopied(""), 1_500)
+  }
+
+  const deleteLead = async (lead: AdminLead) => {
+    const confirmed = window.confirm(
+      `Delete ${lead.name}'s lead permanently? This action cannot be undone.`,
+    )
+    if (!confirmed) return
+
+    setDeleteError("")
+    setDeletingId(lead.id)
+
+    try {
+      const response = await fetch(`/api/admin/leads/${lead.id}`, {
+        method: "DELETE",
+      })
+      const result = (await response.json()) as { error?: string }
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to delete this lead.")
+      }
+
+      setLeads((current) => current.filter((item) => item.id !== lead.id))
+    } catch (error) {
+      setDeleteError(
+        error instanceof Error ? error.message : "Unable to delete this lead.",
+      )
+    } finally {
+      setDeletingId("")
+    }
   }
 
   return (
@@ -99,8 +132,14 @@ export function LeadsDashboard({ leads }: { leads: AdminLead[] }) {
           </label>
         </div>
 
+        {deleteError ? (
+          <p role="alert" className="border-b border-red-200 bg-red-50 px-5 py-3 text-sm font-semibold text-red-700">
+            {deleteError}
+          </p>
+        ) : null}
+
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[980px] text-left">
+          <table className="w-full min-w-[1060px] text-left">
             <thead className="bg-secondary text-xs font-extrabold uppercase tracking-[0.12em] text-muted-foreground">
               <tr>
                 <th className="px-5 py-4">Lead</th>
@@ -108,6 +147,7 @@ export function LeadsDashboard({ leads }: { leads: AdminLead[] }) {
                 <th className="px-5 py-4">Service / Message</th>
                 <th className="px-5 py-4">Source</th>
                 <th className="px-5 py-4">Updated</th>
+                <th className="px-5 py-4 text-right">Action</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -173,6 +213,17 @@ export function LeadsDashboard({ leads }: { leads: AdminLead[] }) {
                       dateStyle: "medium",
                       timeStyle: "short",
                     }).format(new Date(lead.updatedAt))}
+                  </td>
+                  <td className="px-5 py-4 text-right">
+                    <button
+                      type="button"
+                      onClick={() => deleteLead(lead)}
+                      disabled={deletingId === lead.id}
+                      aria-label={`Delete ${lead.name}`}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-red-200 bg-red-50 text-red-600 transition-all hover:-translate-y-0.5 hover:border-red-500 hover:bg-red-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <Trash2 className={`h-4 w-4 ${deletingId === lead.id ? "animate-pulse" : ""}`} />
+                    </button>
                   </td>
                 </tr>
               ))}

@@ -33,9 +33,9 @@ export function Innovation() {
         {/* Right image */}
         <div className="group relative overflow-hidden rounded-2xl">
           <img
-            src="/consua-innovation.jpg"
+            src="/indian-assets/indian-team-meeting.jpg"
             alt="Epeno Advisory consultant on the phone"
-            className="w-full object-cover shadow-xl transition-transform duration-700 group-hover:scale-[1.04]"
+            className="aspect-[16/11] w-full object-cover object-[42%_center] shadow-xl transition-transform duration-700 group-hover:scale-[1.04]"
           />
           <span className="pointer-events-none absolute bottom-6 right-6 font-heading text-5xl font-bold uppercase tracking-widest text-white/10 transition-all duration-500 group-hover:-translate-x-2 group-hover:text-primary/25">
             Epeno

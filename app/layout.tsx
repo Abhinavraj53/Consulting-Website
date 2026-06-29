@@ -4,6 +4,7 @@ import { VisitorPopup } from '@/components/consua/visitor-popup'
 import { ScrollToTop } from '@/components/consua/scroll-to-top'
 import { FloatingWhatsApp } from '@/components/consua/floating-whatsapp'
 import { FloatingCall } from '@/components/consua/floating-call'
+import { SiteLoader } from '@/components/consua/site-loader'
 import './globals.css'
 
 const poppins = Poppins({
@@ -44,6 +45,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <SiteLoader />
         {children}
         <FloatingWhatsApp />
         <FloatingCall />

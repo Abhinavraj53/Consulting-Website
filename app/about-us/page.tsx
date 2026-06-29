@@ -54,9 +54,9 @@ export default function AboutUsPage() {
 
       <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
         <img
-          src="/consua-innovation.jpg"
+          src="/indian-assets/indian-team-meeting.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[62%_center]"
+          className="absolute inset-0 h-full w-full object-cover object-[42%_center]"
         />
         <div className="absolute inset-0 bg-navy/42" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/91 to-navy/48" />

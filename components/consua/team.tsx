@@ -1,10 +1,10 @@
 import { Facebook, Twitter, Linkedin } from "./brand-icons"
 
 const team = [
-  { name: "Jane Cooper", role: "Financial Advisor", img: "/consua-team-1.jpg" },
-  { name: "Jenny Wilson", role: "Senior Consultant", img: "/consua-team-2.jpg" },
-  { name: "Robert Fox", role: "Finance Manager", img: "/consua-team-3.jpg" },
-  { name: "Jacob Jones", role: "Business Planner", img: "/consua-team-4.jpg" },
+  { name: "Aarav Mehta", role: "Financial Advisor", img: "/indian-assets/indian-businessman-office.jpg" },
+  { name: "Priya Sharma", role: "Senior Consultant", img: "/indian-assets/indian-businesswoman-office.jpg" },
+  { name: "Harpreet Singh", role: "Finance Manager", img: "/indian-assets/indian-founder-laptop.jpg" },
+  { name: "Neha Iyer", role: "Business Planner", img: "/Client%20testimonial%20girl.png" },
 ]
 
 export function Team() {

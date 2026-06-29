@@ -73,27 +73,20 @@ export function Hero() {
       />
 
       <div className="ep-container relative grid gap-8 pb-0 pt-28 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:pb-0 lg:pt-40">
-        <div className="relative z-20 max-w-xl xl:max-w-2xl">
-          <p className="mb-5 inline-flex items-center gap-2.5 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-foreground sm:mb-6 sm:text-sm sm:tracking-[0.2em]">
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <Check className="h-3.5 w-3.5" />
-            </span>
-            सोच हमारी, कामयाबी आपकी
-          </p>
-
-          <h1 className="font-heading text-[2.05rem] font-extrabold leading-[1.1] text-[#05070c] text-balance sm:text-[2.85rem] lg:text-[3.15rem] xl:text-[3.45rem] 2xl:text-[3.7rem]">
+        <div className="relative z-20 max-w-xl pt-4 sm:pt-6 xl:max-w-2xl">
+          <h1 className="font-heading text-[1.68rem] font-extrabold leading-[1.12] text-[#05070c] text-balance min-[380px]:text-[1.95rem] sm:text-[2.48rem] lg:text-[2.75rem] xl:text-[3.05rem] 2xl:text-[3.28rem]">
             Are You Maximizing Your Company&apos;s
-            <span className="mt-2 grid min-h-[2.2em] overflow-hidden text-primary sm:min-h-[1.15em]">
+            <span className="mt-2 block min-h-[1.18em] overflow-hidden whitespace-nowrap text-primary">
               <span
                 key={rotatingBenefits[activeBenefit]}
-                className="animate-in fade-in slide-in-from-bottom-3 duration-500"
+                className="block animate-in fade-in slide-in-from-bottom-3 duration-500"
               >
                 {rotatingBenefits[activeBenefit]}
               </span>
             </span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-[#101318] sm:mt-6 sm:text-lg sm:leading-8 xl:text-xl">
+          <p className="mt-6 max-w-xl text-base leading-7 text-[#101318] sm:mt-7 sm:text-lg sm:leading-8">
             Unlock the right opportunities for your business with expert,
             documentation-led support.
             <strong className="mt-1 block font-heading text-base font-extrabold text-foreground sm:text-lg">
@@ -101,7 +94,7 @@ export function Hero() {
             </strong>
           </p>
 
-          <div className="mt-7 sm:mt-8">
+          <div className="mt-8 sm:mt-9">
             <a href="/services" className="ep-button gap-3 sm:h-14 sm:px-8 sm:text-base">
               Grow with us
               <ArrowUpRight className="h-5 w-5" />

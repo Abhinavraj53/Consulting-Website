@@ -38,9 +38,9 @@ export function About() {
 
         <div className="group relative">
           <img
-            src="/consua-about.jpg"
+            src="/indian-assets/indian-businesswoman-office.jpg"
             alt="Epeno Advisory consultant at work"
-            className="ep-image-hover ml-auto aspect-[4/5] w-full max-w-lg rounded-3xl object-cover shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)]"
+            className="ep-image-hover ml-auto aspect-[4/5] w-full max-w-lg rounded-3xl object-cover object-[50%_30%] shadow-[0_28px_90px_-58px_rgba(16,47,88,0.75)]"
           />
           <div className="ep-card ep-soft-hover relative mx-auto -mt-8 w-[calc(100%-2rem)] space-y-5 bg-white/95 p-5 text-foreground backdrop-blur-xl sm:absolute sm:-bottom-10 sm:left-0 sm:mt-0 sm:w-80 sm:p-8">
             <div className="flex items-center gap-4">

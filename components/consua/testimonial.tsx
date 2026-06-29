@@ -81,9 +81,9 @@ export function Testimonial() {
             <span className="absolute left-5 top-16 h-56 w-56 rounded-full bg-primary/15" />
             <span className="absolute bottom-12 right-4 h-36 w-36 rounded-full border border-dashed border-primary/40" />
             <img
-              src="/consua-testimonial.png"
+              src="/Client%20testimonial%20girl.png"
               alt="Epeno client experience"
-              className="relative z-10 mx-auto w-full max-w-[360px] object-contain drop-shadow-[0_28px_38px_rgba(16,47,88,0.14)]"
+              className="relative z-10 mx-auto w-full max-w-[410px] object-contain drop-shadow-[0_28px_38px_rgba(16,47,88,0.14)]"
             />
           </div>
 

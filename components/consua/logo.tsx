@@ -24,18 +24,33 @@ export function Logo({
               : "h-12 w-12"
         } rounded-full object-contain transition-all duration-300`}
       />
-      <span
-        className={`${
-          mini
-            ? "text-lg"
-            : large
-              ? "text-[2.75rem]"
-              : compact
-                ? "text-xl sm:text-2xl"
-                : "text-2xl"
-        } font-heading font-extrabold uppercase leading-none tracking-tight text-current transition-all duration-300`}
-      >
-        Epeno
+      <span className="flex min-w-0 flex-col">
+        <span
+          className={`${
+            mini
+              ? "text-lg"
+              : large
+                ? "text-[2.55rem]"
+                : compact
+                  ? "text-xl sm:text-2xl"
+                  : "text-2xl"
+          } font-heading font-extrabold uppercase leading-none tracking-tight text-current transition-all duration-300`}
+        >
+          Epeno
+        </span>
+        <span
+          className={`${
+            mini
+              ? "hidden"
+              : large
+                ? "mt-1 text-[0.72rem] tracking-[0.22em]"
+                : compact
+                  ? "mt-0.5 text-[0.52rem] tracking-[0.14em] sm:text-[0.6rem]"
+                  : "mt-0.5 text-[0.58rem] tracking-[0.16em]"
+          } whitespace-nowrap font-heading font-extrabold leading-none text-primary transition-all duration-300`}
+        >
+          सोच हमारी, कामयाबी आपकी
+        </span>
       </span>
     </div>
   )

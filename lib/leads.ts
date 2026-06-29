@@ -1,6 +1,6 @@
 import "server-only"
 
-import type { Collection, ObjectId } from "mongodb"
+import { ObjectId, type Collection } from "mongodb"
 import { getDatabase } from "./mongodb"
 
 export type LeadSource = "contact-page" | "visitor-popup" | string
@@ -123,4 +123,14 @@ export async function saveLead(input: Record<string, unknown>) {
 export async function getAllLeads() {
   const collection: Collection<LeadDocument> = await getLeadCollection()
   return collection.find({}).sort({ updatedAt: -1 }).limit(5_000).toArray()
+}
+
+export async function deleteLead(id: string) {
+  if (!ObjectId.isValid(id)) {
+    throw new Error("Invalid lead ID")
+  }
+
+  const collection = await getLeadCollection()
+  const result = await collection.deleteOne({ _id: new ObjectId(id) })
+  return result.deletedCount === 1
 }

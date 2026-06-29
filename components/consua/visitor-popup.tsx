@@ -98,9 +98,9 @@ export function VisitorPopup() {
 
         <section className="relative hidden min-h-[570px] overflow-hidden p-8 text-white md:flex md:flex-col md:justify-between lg:p-9">
           <img
-            src="/consua-cta.jpg"
+            src="/indian-assets/indian-team-meeting.jpg"
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-[38%_center]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/78 via-navy/88 to-[#071d38]/95" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(245,186,75,0.32),transparent_34%)]" />

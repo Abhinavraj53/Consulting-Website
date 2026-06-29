@@ -2,21 +2,21 @@ import { ArrowRight } from "lucide-react"
 
 const posts = [
   {
-    img: "/consua-blog-1.jpg",
+    img: "/indian-assets/indian-team-meeting.jpg",
     author: "Epeno",
     date: "Startup Guide",
     title: "How Startup India certification helps unlock business benefits.",
     href: "/services/startup-india-certification",
   },
   {
-    img: "/consua-blog-2.jpg",
+    img: "/indian-assets/indian-founder-laptop.jpg",
     author: "Epeno",
     date: "Funding Guide",
     title: "Government loans and grants for startups and MSMEs.",
     href: "/services/seed-fund",
   },
   {
-    img: "/consua-blog-3.jpg",
+    img: "/indian-assets/indian-businesswoman-office.jpg",
     author: "Epeno",
     date: "Compliance Guide",
     title: "GST, ROC and annual compliance essentials for companies.",

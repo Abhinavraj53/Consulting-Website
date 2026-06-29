@@ -187,6 +187,9 @@
   .ep-button {
     @apply inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-6 py-3 text-center font-heading text-sm font-extrabold text-primary-foreground shadow-[0_18px_38px_-24px_rgba(16,47,88,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 sm:px-7;
   }
+  .ep-loader-ring {
+    animation: ep-loader-spin 900ms linear infinite;
+  }
   .hero-dialog-card {
     will-change: opacity, transform;
   }
@@ -208,6 +211,12 @@
   }
   .hero-person-right {
     animation: hero-person-right-in 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes ep-loader-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 

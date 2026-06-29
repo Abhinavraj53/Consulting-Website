@@ -239,6 +239,37 @@ const slugOverrides: Record<string, string> = {
   "Maha Udyog Yojana (CMEGP)": "maha-udyog-yojana-cmegp",
 }
 
+const categoryHeroImages: Record<string, { src: string; position: string }> = {
+  "Business Setup": {
+    src: "/indian-assets/indian-businessman-office.jpg",
+    position: "50% center",
+  },
+  "Brand Protection": {
+    src: "/indian-assets/indian-businesswoman-office.jpg",
+    position: "50% 30%",
+  },
+  "Business Credentials": {
+    src: "/indian-assets/indian-team-meeting.jpg",
+    position: "42% center",
+  },
+  "Government Schemes": {
+    src: "/indian-assets/indian-founder-laptop.jpg",
+    position: "50% center",
+  },
+  "Funding Solutions": {
+    src: "/Hero%20left.png",
+    position: "52% bottom",
+  },
+  "Growth & Investment": {
+    src: "/Hero%20right.png",
+    position: "50% bottom",
+  },
+  "Compliance Desk": {
+    src: "/Client%20testimonial%20girl.png",
+    position: "50% bottom",
+  },
+}
+
 export function toServiceSlug(service: string) {
   return (
     slugOverrides[service] ??
@@ -259,6 +290,7 @@ export const allServices = serviceCategories.flatMap((category) =>
   category.services.map((service, index) => {
     const content = categoryContent[category.title]
     const slug = toServiceSlug(service)
+    const categoryHeroImage = categoryHeroImages[category.title]
 
     return {
     title: service,
@@ -267,10 +299,8 @@ export const allServices = serviceCategories.flatMap((category) =>
     icon: category.icon,
     slug,
     href: `/services/${slug}`,
-    heroImage: `/service-heroes/${slug}.jpg`,
-    heroPosition: ["center", "42% center", "58% center", "center 42%"][
-      index % 4
-    ],
+    heroImage: categoryHeroImage.src,
+    heroPosition: categoryHeroImage.position,
     description: `${service} support by Epeno for ${content.audience}. We help you ${content.promise}.`,
     summary: `Epeno helps with ${service} through eligibility checks, document preparation, filing guidance and follow-up support.`,
     benefits: content.benefits,

@@ -9,9 +9,9 @@ export function CtaBanner() {
     <section id="contact" className="relative overflow-hidden bg-navy py-24 text-white md:py-32">
       <div className="absolute inset-0">
         <img
-          src="/innovation-man.png"
+          src="/indian-assets/indian-businessman-office.jpg"
           alt=""
-          className="h-full w-full object-cover opacity-70 mix-blend-luminosity [object-position:68%_42%]"
+          className="h-full w-full object-cover opacity-70 mix-blend-luminosity [object-position:64%_42%]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/95" />
         <div className="absolute inset-0 bg-primary/15" />

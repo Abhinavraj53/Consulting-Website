@@ -46,9 +46,9 @@ export default function ContactPage() {
 
       <section className="relative overflow-hidden bg-navy pb-20 pt-44 text-white sm:pt-48 lg:pb-24 lg:pt-56">
         <img
-          src="/consua-project.jpg"
+          src="/indian-assets/indian-team-meeting.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[68%_center]"
+          className="absolute inset-0 h-full w-full object-cover object-[42%_center]"
         />
         <div className="absolute inset-0 bg-navy/45" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/92 to-navy/45" />
