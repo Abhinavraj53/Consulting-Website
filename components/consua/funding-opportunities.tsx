@@ -127,16 +127,16 @@ export function FundingOpportunities() {
                   key={scheme.title}
                   className="group/card overflow-hidden rounded-2xl border border-border/80 bg-white shadow-[0_22px_70px_-52px_rgba(16,47,88,0.65)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-[0_28px_80px_-46px_rgba(16,47,88,0.75)]"
                 >
-                  <div className="flex min-h-16 items-center justify-between gap-3 bg-navy p-3 text-white">
+                  <div className="flex min-h-16 flex-col items-start justify-between gap-3 bg-navy p-3 text-white min-[420px]:flex-row min-[420px]:items-center">
                     <div className="flex min-w-0 items-center gap-3">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-primary transition-all duration-300 group-hover/card:bg-primary group-hover/card:text-primary-foreground">
                         <Icon className="h-5 w-5" />
                       </span>
-                      <h3 className="truncate font-heading text-lg font-extrabold tracking-wide sm:text-xl">
+                      <h3 className="break-words font-heading text-lg font-extrabold tracking-wide sm:text-xl">
                         {scheme.title}
                       </h3>
                     </div>
-                    <span className="shrink-0 rounded-xl bg-primary px-3 py-2 text-center font-heading text-xs font-extrabold text-primary-foreground shadow-[inset_0_-12px_22px_-18px_rgba(16,47,88,0.9)] sm:text-sm">
+                    <span className="w-full shrink-0 rounded-xl bg-primary px-3 py-2 text-center font-heading text-xs font-extrabold text-primary-foreground shadow-[inset_0_-12px_22px_-18px_rgba(16,47,88,0.9)] min-[420px]:w-auto sm:text-sm">
                       {scheme.amount}
                     </span>
                   </div>

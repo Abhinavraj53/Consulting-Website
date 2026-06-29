@@ -29,7 +29,7 @@ export function Services() {
             </p>
 
             <div
-              className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-1"
+              className="mt-6 grid grid-cols-1 gap-2 min-[430px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-1"
               role="tablist"
               aria-label="Service categories"
             >
@@ -60,7 +60,7 @@ export function Services() {
                       <Icon className="h-4.5 w-4.5" />
                     </span>
                     <span className="min-w-0">
-                      <span className="block truncate font-heading text-sm font-extrabold uppercase">
+                      <span className="block break-words font-heading text-sm font-extrabold uppercase leading-tight">
                         {category.title}
                       </span>
                       <span

@@ -258,7 +258,7 @@ export function Header() {
                 {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
               </a>
             ))}
-            <div className="mt-2 grid grid-cols-2 gap-2 border-t border-border/70 pt-4">
+            <div className="mt-2 grid grid-cols-1 gap-2 border-t border-border/70 pt-4 min-[420px]:grid-cols-2">
               {serviceCategories.map((category) => (
                 <a
                   key={category.title}
