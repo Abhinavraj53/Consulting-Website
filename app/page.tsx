@@ -2,6 +2,7 @@ import { Header } from "@/components/consua/header"
 import { Hero } from "@/components/consua/hero"
 import { Consulting } from "@/components/consua/consulting"
 import { Services } from "@/components/consua/services"
+import { FundingOpportunities } from "@/components/consua/funding-opportunities"
 import { Process } from "@/components/consua/process"
 import { Flexibility } from "@/components/consua/flexibility"
 import { Innovation } from "@/components/consua/innovation"
@@ -20,6 +21,7 @@ export default function Page() {
       <Header />
       <Hero />
       <Services />
+      <FundingOpportunities />
       <Testimonial />
       <IncubationNetwork />
       <Consulting />
