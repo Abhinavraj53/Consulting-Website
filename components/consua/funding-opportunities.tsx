@@ -11,11 +11,13 @@ import {
   TrendingUp,
   Wheat,
 } from "lucide-react"
+import { getServiceHref } from "./service-data"
 
 const fundingSchemes = [
   {
     title: "CGSS",
     amount: "Up to Rs20 Crore",
+    href: getServiceHref("Credit Guarantee Scheme for Startups (CGSS)"),
     icon: ShieldCheck,
     bullets: [
       "Credit Guarantee Scheme for Startups support",
@@ -24,7 +26,8 @@ const fundingSchemes = [
   },
   {
     title: "CGTMSE",
-    amount: "Up to Rs5 Crore",
+    amount: "Up to Rs10 Crore",
+    href: getServiceHref("Working Capital (CGTMSE Loan)"),
     icon: TrendingUp,
     bullets: [
       "Collateral-free working capital support",
@@ -34,6 +37,7 @@ const fundingSchemes = [
   {
     title: "NAIFF",
     amount: "Up to Rs2 Crore",
+    href: getServiceHref("NAIFF"),
     icon: Leaf,
     bullets: [
       "Agriculture infrastructure financing guidance",
@@ -43,6 +47,7 @@ const fundingSchemes = [
   {
     title: "SSS",
     amount: "Up to Rs1 Crore",
+    href: getServiceHref("Seed Support Scheme"),
     icon: BadgeIndianRupee,
     bullets: [
       "Seed Support Scheme application assistance",
@@ -52,6 +57,7 @@ const fundingSchemes = [
   {
     title: "SISFS",
     amount: "Up to Rs50 Lakh",
+    href: getServiceHref("Seed Fund"),
     icon: Sprout,
     bullets: [
       "Startup India Seed Fund Scheme support",
@@ -61,6 +67,7 @@ const fundingSchemes = [
   {
     title: "PMEGP",
     amount: "Up to Rs50 Lakh",
+    href: getServiceHref("PMEGP LOAN"),
     icon: Landmark,
     bullets: [
       "Employment-generation loan application support",
@@ -70,6 +77,7 @@ const fundingSchemes = [
   {
     title: "MSME Loan",
     amount: "Up to Rs50 Lakh",
+    href: getServiceHref("MSME Loan"),
     icon: Building2,
     bullets: [
       "Loan planning for micro, small and medium enterprises",
@@ -79,6 +87,7 @@ const fundingSchemes = [
   {
     title: "PMFME",
     amount: "Up to Rs10 Lakh",
+    href: getServiceHref("PMFME"),
     icon: Wheat,
     bullets: [
       "Micro food-processing enterprise scheme support",
@@ -88,6 +97,7 @@ const fundingSchemes = [
   {
     title: "PMMY",
     amount: "Up to Rs20 Lakh",
+    href: getServiceHref("MUDRA LOAN"),
     icon: HandCoins,
     bullets: [
       "Pradhan Mantri MUDRA Yojana guidance",
@@ -100,7 +110,7 @@ export function FundingOpportunities() {
   return (
     <section className="ep-section bg-background">
       <div className="ep-container">
-        <a href="/services#funding-solutions" className="group/section block">
+        <div className="group/section">
           <div className="mb-9 flex flex-col gap-4 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="ep-eyebrow inline-flex items-center gap-2">
@@ -112,10 +122,10 @@ export function FundingOpportunities() {
                 <span className="text-primary">your business</span>
               </h2>
             </div>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-white px-5 py-3 font-heading text-sm font-extrabold text-navy shadow-[0_18px_48px_-34px_rgba(16,47,88,0.55)] transition-all duration-300 group-hover/section:-translate-y-0.5 group-hover/section:border-primary group-hover/section:bg-primary group-hover/section:text-primary-foreground">
+            <a href="/services#funding-solutions" className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-white px-5 py-3 font-heading text-sm font-extrabold text-navy shadow-[0_18px_48px_-34px_rgba(16,47,88,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-primary-foreground">
               Explore services
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/section:-translate-y-0.5 group-hover/section:translate-x-0.5" />
-            </span>
+            </a>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -123,9 +133,11 @@ export function FundingOpportunities() {
               const Icon = scheme.icon
 
               return (
-                <article
+                <a
                   key={scheme.title}
+                  href={scheme.href}
                   className="group/card overflow-hidden rounded-2xl border border-border/80 bg-white shadow-[0_22px_70px_-52px_rgba(16,47,88,0.65)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-[0_28px_80px_-46px_rgba(16,47,88,0.75)]"
+                  aria-label={`Read full details for ${scheme.title}`}
                 >
                   <div className="flex min-h-16 flex-col items-start justify-between gap-3 bg-navy p-3 text-white min-[420px]:flex-row min-[420px]:items-center">
                     <div className="flex min-w-0 items-center gap-3">
@@ -152,11 +164,11 @@ export function FundingOpportunities() {
                       </p>
                     ))}
                   </div>
-                </article>
+                </a>
               )
             })}
           </div>
-        </a>
+        </div>
       </div>
     </section>
   )

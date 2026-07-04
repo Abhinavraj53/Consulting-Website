@@ -79,10 +79,12 @@ export const serviceCategories = [
     description: "Funding routes for startup and MSME growth.",
     services: [
       "Venture Capital",
+      "Credit Guarantee Scheme for Startups (CGSS)",
       "Working Capital (CGTMSE Loan)",
       "NAIFF",
       "PMEGP LOAN",
       "MUDRA LOAN",
+      "MSME Loan",
       "PMFME",
       "Maha Udyog Yojana (CMEGP)",
     ],
@@ -237,6 +239,7 @@ const slugOverrides: Record<string, string> = {
   "Udhyam Registration": "udyam-registration",
   "GST Lut": "gst-lut",
   "Maha Udyog Yojana (CMEGP)": "maha-udyog-yojana-cmegp",
+  "Credit Guarantee Scheme for Startups (CGSS)": "credit-guarantee-scheme-for-startups-cgss",
 }
 
 const categoryHeroImages: Record<string, { src: string; position: string }> = {
