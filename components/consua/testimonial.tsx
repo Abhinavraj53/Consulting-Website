@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import {
   ChevronLeft,
   ChevronRight,
-  CircleCheck,
   Quote,
   Star,
 } from "lucide-react"
@@ -80,9 +79,67 @@ function initials(name: string) {
     .join("")
 }
 
+function schemeLogo(scheme: string) {
+  if (scheme.includes("PMFME")) {
+    return {
+      short: "PM",
+      name: "PMFME",
+      logo: "/scheme-logos/pmfme.png",
+      tone: "border-primary/50 bg-[#fff4dc] text-[#9b6400]",
+    }
+  }
+  if (scheme.includes("CGTMSE")) {
+    return {
+      short: "CG",
+      name: "CGTMSE",
+      logo: "/scheme-logos/cgtmse.png",
+      tone: "border-[#2f5f9f]/25 bg-[#eaf2ff] text-navy",
+    }
+  }
+  if (scheme.includes("Startup")) {
+    return {
+      short: "SI",
+      name: "Startup India",
+      logo: "/scheme-logos/startup-india.png",
+      tone: "border-[#ff8a65]/35 bg-[#fff1ed] text-[#b44220]",
+    }
+  }
+  if (scheme.includes("MSME")) {
+    return {
+      short: "MS",
+      name: "MSME",
+      logo: "/scheme-logos/msme.jpg",
+      tone: "border-[#33a263]/30 bg-[#eef8f2] text-[#176b3b]",
+    }
+  }
+  if (scheme.includes("CGSS")) {
+    return {
+      short: "CS",
+      name: "CGSS",
+      logo: "",
+      tone: "border-[#6b73d6]/30 bg-[#eef0ff] text-[#24318a]",
+    }
+  }
+  if (scheme.includes("PMMY")) {
+    return {
+      short: "MY",
+      name: "PMMY",
+      logo: "",
+      tone: "border-primary/50 bg-[#fff7e8] text-[#965700]",
+    }
+  }
+  return {
+    short: "GO",
+    name: scheme,
+    logo: "",
+    tone: "border-border bg-secondary text-navy",
+  }
+}
+
 export function Testimonial() {
   const [active, setActive] = useState(0)
   const testimonial = testimonials[active]
+  const activeScheme = schemeLogo(testimonial.scheme)
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -207,9 +264,26 @@ export function Testimonial() {
                     </p>
                   </div>
                 </div>
-                <span className="inline-flex w-fit items-center gap-2 rounded-full bg-navy px-4 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-white">
-                  <CircleCheck className="h-4 w-4 text-primary" />
-                  Epeno verified file
+                <span
+                  className={`inline-flex w-fit items-center gap-3 rounded-full border px-3 py-2 shadow-sm transition-all duration-300 ${activeScheme.tone}`}
+                  aria-label={`${activeScheme.name} scheme logo`}
+                >
+                  <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white p-1 shadow-inner">
+                    {activeScheme.logo ? (
+                      <img
+                        src={activeScheme.logo}
+                        alt=""
+                        className="h-full w-full object-contain"
+                      />
+                    ) : (
+                      <span className="font-heading text-[0.7rem] font-extrabold">
+                        {activeScheme.short}
+                      </span>
+                    )}
+                  </span>
+                  <span className="font-heading text-xs font-extrabold uppercase tracking-[0.13em]">
+                    {activeScheme.name}
+                  </span>
                 </span>
               </div>
             </div>
