@@ -2,12 +2,9 @@
 
 import { useEffect, useState } from "react"
 import {
-  BadgeIndianRupee,
-  Building2,
   ChevronLeft,
   ChevronRight,
   CircleCheck,
-  FileCheck2,
   Quote,
   Star,
 } from "lucide-react"
@@ -19,10 +16,9 @@ const testimonials = [
     company: "Bhanu Agro Foods",
     industry: "Food Processing",
     scheme: "PMFME Scheme",
-    funding: "Subsidy-linked project file",
     service: "Mudra Loan & Trademark",
     rating: 5,
-    text: "Epeno helped us structure our documents, funding file and follow-up process so our expansion plan looked bank-ready.",
+    text: "When we planned our food-processing expansion, the biggest challenge was presenting the business clearly to the bank. Epeno organized our documents, shaped the funding file and kept every follow-up practical, so the plan felt complete and ready for the next step.",
   },
   {
     name: "Manish Rajput",
@@ -30,10 +26,9 @@ const testimonials = [
     company: "Rajput Engineering Works",
     industry: "MSME Manufacturing",
     scheme: "CGTMSE",
-    funding: "Collateral-free credit support",
     service: "CGTMSE Loan",
     rating: 5,
-    text: "The team understood our machine purchase requirement and prepared the CGTMSE loan documentation with clarity.",
+    text: "We needed funds for machinery but did not know how to present the CGTMSE case properly. Epeno understood the requirement, prepared the documents with clarity and helped us explain the working-capital need in a way that felt professional.",
   },
   {
     name: "Shivanshu Gangwar",
@@ -41,10 +36,9 @@ const testimonials = [
     company: "Gangwar Tech Labs",
     industry: "SaaS Startup",
     scheme: "Startup India",
-    funding: "DPIIT recognition support",
     service: "Startup India Certificate",
     rating: 4,
-    text: "Epeno made the Startup India certificate process simple and kept our documents organized from day one.",
+    text: "As a young tech startup, we wanted our recognition process to be clean from day one. Epeno reviewed our basic details, corrected the document flow and guided the application step by step without making the process feel confusing.",
   },
   {
     name: "Krishna Yadav",
@@ -52,10 +46,9 @@ const testimonials = [
     company: "Yadav Wellness Naturals",
     industry: "Consumer Brand",
     scheme: "Trademark + MSME",
-    funding: "Brand protection readiness",
     service: "Trademark Registration",
     rating: 5,
-    text: "Our brand registration and business records were handled cleanly, which helped us approach distributors with confidence.",
+    text: "Before approaching distributors, we wanted our brand and business identity to look credible. Epeno helped us clean up the registration work, protect the brand name and keep the records ready for serious business conversations.",
   },
   {
     name: "Anjali Verma",
@@ -63,10 +56,9 @@ const testimonials = [
     company: "Verma Solar Solutions",
     industry: "Clean Energy",
     scheme: "CGSS",
-    funding: "Startup credit guarantee",
     service: "CGTMSE Loan",
     rating: 5,
-    text: "Epeno mapped our startup stage, prepared the funding file and explained how the credit guarantee route could support our working capital.",
+    text: "Our solar startup had orders coming in, but cash flow planning was becoming difficult. Epeno mapped our stage, explained the credit-guarantee route and built a funding file that connected our project need with a realistic repayment story.",
   },
   {
     name: "Nand Kishor Singh",
@@ -74,10 +66,9 @@ const testimonials = [
     company: "Singh Logistics India",
     industry: "Logistics",
     scheme: "PMMY",
-    funding: "Business loan documentation",
     service: "Government Loan",
     rating: 5,
-    text: "We needed a practical government-loan file. Epeno guided the checklist, projections and submission steps patiently.",
+    text: "For our logistics business, we needed a government-loan file that was simple, practical and complete. Epeno guided the checklist, improved the projections and patiently helped us prepare each submission step.",
   },
 ]
 
@@ -145,7 +136,7 @@ export function Testimonial() {
           >
             <div className="relative flex min-h-[360px] items-end justify-center overflow-hidden bg-secondary px-6 pt-8 lg:min-h-[560px]">
               <span className="absolute left-8 top-8 rounded-full border border-primary/25 bg-white/85 px-4 py-2 font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-navy shadow-sm">
-                Client founder
+                Success stories
               </span>
               <img
                 src="/Client%20testimonial%20girl.png"
@@ -202,37 +193,7 @@ export function Testimonial() {
                 “{testimonial.text}”
               </blockquote>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-border bg-secondary p-4">
-                  <Building2 className="h-5 w-5 text-primary" />
-                  <p className="mt-3 text-xs font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
-                    Company
-                  </p>
-                  <p className="mt-1 font-heading text-sm font-extrabold text-foreground">
-                    {testimonial.company}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-primary/40 bg-accent p-4">
-                  <BadgeIndianRupee className="h-5 w-5 text-primary" />
-                  <p className="mt-3 text-xs font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
-                    Scheme
-                  </p>
-                  <p className="mt-1 font-heading text-sm font-extrabold text-foreground">
-                    {testimonial.scheme}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-border bg-secondary p-4">
-                  <FileCheck2 className="h-5 w-5 text-primary" />
-                  <p className="mt-3 text-xs font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
-                    Outcome
-                  </p>
-                  <p className="mt-1 font-heading text-sm font-extrabold text-foreground">
-                    {testimonial.funding}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy font-heading text-sm font-extrabold text-white">
                     {initials(testimonial.name)}
