@@ -15,9 +15,11 @@ const testimonials = [
     company: "Bhanu Agro Foods",
     industry: "Food Processing",
     scheme: "PMFME Scheme",
+    fundAmount: "Rs10 Lakh",
     service: "Mudra Loan & Trademark",
     rating: 5,
-    text: "When we planned our food-processing expansion, the biggest challenge was presenting the business clearly to the bank. Epeno organized our documents, shaped the funding file and kept every follow-up practical, so the plan felt complete and ready for the next step.",
+    beforeHighlight: "When we planned our food-processing expansion, the biggest challenge was presenting the business clearly to the bank. Epeno helped us prepare a",
+    afterHighlight: "file and kept every follow-up practical, so the plan felt complete and ready for the next step.",
   },
   {
     name: "Manish Rajput",
@@ -25,9 +27,11 @@ const testimonials = [
     company: "Rajput Engineering Works",
     industry: "MSME Manufacturing",
     scheme: "CGTMSE",
+    fundAmount: "Rs10 Cr",
     service: "CGTMSE Loan",
     rating: 5,
-    text: "We needed funds for machinery but did not know how to present the CGTMSE case properly. Epeno understood the requirement, prepared the documents with clarity and helped us explain the working-capital need in a way that felt professional.",
+    beforeHighlight: "We needed funds for machinery but did not know how to present the credit case properly. Epeno prepared the documents for",
+    afterHighlight: "support and helped us explain the working-capital need in a way that felt professional.",
   },
   {
     name: "Shivanshu Gangwar",
@@ -35,9 +39,11 @@ const testimonials = [
     company: "Gangwar Tech Labs",
     industry: "SaaS Startup",
     scheme: "Startup India",
+    fundAmount: "Recognition",
     service: "Startup India Certificate",
     rating: 4,
-    text: "As a young tech startup, we wanted our recognition process to be clean from day one. Epeno reviewed our basic details, corrected the document flow and guided the application step by step without making the process feel confusing.",
+    beforeHighlight: "As a young tech startup, we wanted our recognition process to be clean from day one. Epeno reviewed our details for",
+    afterHighlight: "and guided the application step by step without making the process feel confusing.",
   },
   {
     name: "Krishna Yadav",
@@ -45,9 +51,11 @@ const testimonials = [
     company: "Yadav Wellness Naturals",
     industry: "Consumer Brand",
     scheme: "Trademark + MSME",
+    fundAmount: "Rs50 Lakh",
     service: "Trademark Registration",
     rating: 5,
-    text: "Before approaching distributors, we wanted our brand and business identity to look credible. Epeno helped us clean up the registration work, protect the brand name and keep the records ready for serious business conversations.",
+    beforeHighlight: "Before approaching distributors, we wanted our brand and business identity to look credible. Epeno helped us prepare an",
+    afterHighlight: "ready file, protect the brand name and keep records ready for serious business conversations.",
   },
   {
     name: "Anjali Verma",
@@ -55,9 +63,11 @@ const testimonials = [
     company: "Verma Solar Solutions",
     industry: "Clean Energy",
     scheme: "CGSS",
+    fundAmount: "Rs20 Cr",
     service: "CGTMSE Loan",
     rating: 5,
-    text: "Our solar startup had orders coming in, but cash flow planning was becoming difficult. Epeno mapped our stage, explained the credit-guarantee route and built a funding file that connected our project need with a realistic repayment story.",
+    beforeHighlight: "Our solar startup had orders coming in, but cash flow planning was becoming difficult. Epeno mapped our stage, explained",
+    afterHighlight: "and built a funding file that connected our project need with a realistic repayment story.",
   },
   {
     name: "Nand Kishor Singh",
@@ -65,9 +75,11 @@ const testimonials = [
     company: "Singh Logistics India",
     industry: "Logistics",
     scheme: "PMMY",
+    fundAmount: "Rs20 Lakh",
     service: "Government Loan",
     rating: 5,
-    text: "For our logistics business, we needed a government-loan file that was simple, practical and complete. Epeno guided the checklist, improved the projections and patiently helped us prepare each submission step.",
+    beforeHighlight: "For our logistics business, we needed a government-loan file that was simple, practical and complete. Epeno helped us prepare a",
+    afterHighlight: "file, improved the projections and patiently guided each submission step.",
   },
 ]
 
@@ -84,6 +96,7 @@ function schemeLogo(scheme: string) {
     return {
       short: "PM",
       name: "PMFME",
+      amount: "Up to Rs10 Lakh",
       logo: "/scheme-logos/pmfme.png",
       tone: "border-primary/50 bg-[#fff4dc] text-[#9b6400]",
     }
@@ -92,6 +105,7 @@ function schemeLogo(scheme: string) {
     return {
       short: "CG",
       name: "CGTMSE",
+      amount: "Up to Rs10 Cr",
       logo: "/scheme-logos/cgtmse.png",
       tone: "border-[#2f5f9f]/25 bg-[#eaf2ff] text-navy",
     }
@@ -100,6 +114,7 @@ function schemeLogo(scheme: string) {
     return {
       short: "SI",
       name: "Startup India",
+      amount: "Recognition",
       logo: "/scheme-logos/startup-india.png",
       tone: "border-[#ff8a65]/35 bg-[#fff1ed] text-[#b44220]",
     }
@@ -108,6 +123,7 @@ function schemeLogo(scheme: string) {
     return {
       short: "MS",
       name: "MSME",
+      amount: "Up to Rs50 Lakh",
       logo: "/scheme-logos/msme.jpg",
       tone: "border-[#33a263]/30 bg-[#eef8f2] text-[#176b3b]",
     }
@@ -116,6 +132,7 @@ function schemeLogo(scheme: string) {
     return {
       short: "CS",
       name: "CGSS",
+      amount: "Up to Rs20 Cr",
       logo: "",
       tone: "border-[#6b73d6]/30 bg-[#eef0ff] text-[#24318a]",
     }
@@ -124,6 +141,7 @@ function schemeLogo(scheme: string) {
     return {
       short: "MY",
       name: "PMMY",
+      amount: "Up to Rs20 Lakh",
       logo: "",
       tone: "border-primary/50 bg-[#fff7e8] text-[#965700]",
     }
@@ -131,6 +149,7 @@ function schemeLogo(scheme: string) {
   return {
     short: "GO",
     name: scheme,
+    amount: "",
     logo: "",
     tone: "border-border bg-secondary text-navy",
   }
@@ -247,7 +266,17 @@ export function Testimonial() {
               </div>
 
               <blockquote className="mt-7 max-w-3xl font-heading text-xl font-semibold leading-[1.55] text-foreground sm:text-2xl">
-                “{testimonial.text}”
+                “{testimonial.beforeHighlight}{" "}
+                <span className="inline-flex translate-y-[-0.08em] items-center gap-2 rounded-full border border-primary/45 bg-accent px-3 py-1.5 text-primary shadow-[0_12px_30px_-24px_rgba(245,186,75,0.9)]">
+                  <span className="text-[0.72em] font-extrabold uppercase tracking-[0.12em]">
+                    {activeScheme.name}
+                  </span>
+                  <span className="h-4 w-px bg-primary/40" />
+                  <span className="text-[0.82em] font-extrabold text-navy">
+                    {testimonial.fundAmount}
+                  </span>
+                </span>{" "}
+                {testimonial.afterHighlight}”
               </blockquote>
 
               <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
@@ -281,8 +310,15 @@ export function Testimonial() {
                       </span>
                     )}
                   </span>
-                  <span className="font-heading text-xs font-extrabold uppercase tracking-[0.13em]">
-                    {activeScheme.name}
+                  <span className="flex flex-col leading-none">
+                    <span className="font-heading text-xs font-extrabold uppercase tracking-[0.13em]">
+                      {activeScheme.name}
+                    </span>
+                    {activeScheme.amount ? (
+                      <span className="mt-1 text-[0.68rem] font-extrabold tracking-normal">
+                        {activeScheme.amount}
+                      </span>
+                    ) : null}
                   </span>
                 </span>
               </div>
