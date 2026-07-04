@@ -3,16 +3,25 @@ import {
   BadgeIndianRupee,
   Building2,
   CheckCircle2,
-  Factory,
   HandCoins,
   Landmark,
   Leaf,
+  ShieldCheck,
   Sprout,
   TrendingUp,
   Wheat,
 } from "lucide-react"
 
 const fundingSchemes = [
+  {
+    title: "CGSS",
+    amount: "Up to Rs20 Crore",
+    icon: ShieldCheck,
+    bullets: [
+      "Credit Guarantee Scheme for Startups support",
+      "Collateral-free debt funding file guidance",
+    ],
+  },
   {
     title: "CGTMSE",
     amount: "Up to Rs5 Crore",
@@ -65,15 +74,6 @@ const fundingSchemes = [
     bullets: [
       "Loan planning for micro, small and medium enterprises",
       "Bank-ready documents and eligibility review",
-    ],
-  },
-  {
-    title: "Textile Fund",
-    amount: "Up to Rs1 Crore",
-    icon: Factory,
-    bullets: [
-      "Textile innovation and development fund guidance",
-      "Support for business plans and funding documents",
     ],
   },
   {
