@@ -18,7 +18,7 @@ const faqs = [
   {
     question: "Where is Epeno Advisory located?",
     answer:
-      "Epeno Advisory Private Limited is based at A-451, Tower - A, IThum Heights, Sector 62, near Noida Electronic City Metro Station, Noida, Uttar Pradesh.",
+      "Epeno Advisory Private Limited is based at A-514, Unit No:- 14, 5th Floor, Tower - A, IThum Heights, Sector 62, near Noida Electronic City Metro Station, Noida, Uttar Pradesh.",
   },
 ]
 

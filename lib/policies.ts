@@ -182,6 +182,12 @@ export const policies: Policy[] = [
         ],
       },
       {
+        heading: "Complaint window for refund requests",
+        paragraphs: [
+          "Any complaint or refund request must be raised in writing within 30 days from the date of payment, service confirmation or delivery of the relevant work, whichever is earlier. Refund requests received after 30 days will not be eligible for review, except where Epeno expressly agrees in writing due to exceptional circumstances.",
+        ],
+      },
+      {
         heading: "Concerns and disputes",
         paragraphs: [
           "Please contact us first if you are dissatisfied with a service. We will review the concern against the agreed service scope. Unresolved disputes are handled under the Terms & Conditions and applicable law.",

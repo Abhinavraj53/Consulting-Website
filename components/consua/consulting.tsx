@@ -54,14 +54,14 @@ export function Consulting() {
             className="relative z-10 ml-auto aspect-[4/5] w-full max-w-md rounded-3xl object-cover object-[42%_center] shadow-2xl transition-transform duration-700 group-hover:scale-[1.025]"
           />
           {/* experience badge */}
-          <div className="absolute bottom-5 left-2 z-20 flex h-32 w-32 flex-col justify-end rounded-3xl bg-primary p-4 text-primary-foreground shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-2 sm:bottom-12 sm:left-4 sm:h-40 sm:w-40 sm:p-6 lg:left-12">
+          <div className="absolute bottom-5 left-2 z-20 flex h-28 w-28 flex-col justify-end rounded-3xl bg-primary p-3 text-primary-foreground shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-2 sm:bottom-12 sm:left-4 sm:h-40 sm:w-40 sm:p-6 lg:left-12">
             <span
               aria-hidden="true"
-              className="absolute left-6 top-3 font-heading text-[5.5rem] font-bold leading-none text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.85)]"
+              className="absolute left-4 top-2 font-heading text-[4.35rem] font-bold leading-none text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.85)] sm:left-6 sm:top-3 sm:text-[5.5rem]"
             >
               15
             </span>
-            <p className="relative font-heading text-lg font-bold leading-tight">
+            <p className="relative max-w-[4.8rem] font-heading text-base font-bold leading-[1.05] sm:max-w-none sm:text-lg sm:leading-tight">
               Years experience
             </p>
           </div>

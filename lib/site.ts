@@ -7,9 +7,9 @@ export const siteDetails = {
   email: "support@epeno.in",
   emailHref: "mailto:support@epeno.in",
   address:
-    "A-451, Tower A, IThum Heights, Sector 62, near Noida Electronic City Metro Station, Noida, Uttar Pradesh 201301",
+    "A-514, Unit No:- 14, 5th Floor, Tower A, IThum Heights, Sector 62, near Noida Electronic City Metro Station, Noida, Uttar Pradesh 201301",
   mapsHref:
-    "https://www.google.com/maps/search/?api=1&query=A-451%2C%20Tower%20A%2C%20IThum%20Heights%2C%20Sector%2062%2C%20Noida%20201301",
+    "https://www.google.com/maps/search/?api=1&query=A-514%2C%20Unit%20No%3A-%2014%2C%205th%20Floor%2C%20Tower%20A%2C%20IThum%20Heights%2C%20Sector%2062%2C%20Noida%20201301",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61566572521282",
     instagram: "https://www.instagram.com/epenoadvisory/",
