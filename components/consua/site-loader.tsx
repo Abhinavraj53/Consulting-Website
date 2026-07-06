@@ -20,27 +20,34 @@ export function SiteLoader() {
   const startedAt = useRef(Date.now())
   const hideTimer = useRef<number | null>(null)
 
+  const clearHideTimer = () => {
+    if (hideTimer.current) {
+      window.clearTimeout(hideTimer.current)
+      hideTimer.current = null
+    }
+  }
+
+  const hideNow = () => {
+    clearHideTimer()
+    setVisible(false)
+  }
+
   useEffect(() => {
     const hide = () => {
       const elapsed = Date.now() - startedAt.current
       const delay = Math.max(MIN_VISIBLE_MS - elapsed, 0)
 
-      if (hideTimer.current) {
-        window.clearTimeout(hideTimer.current)
-      }
+      clearHideTimer()
 
       hideTimer.current = window.setTimeout(() => {
         setVisible(false)
+        hideTimer.current = null
       }, delay)
     }
 
     hide()
 
-    return () => {
-      if (hideTimer.current) {
-        window.clearTimeout(hideTimer.current)
-      }
-    }
+    return clearHideTimer
   }, [pathname])
 
   useEffect(() => {
@@ -60,6 +67,25 @@ export function SiteLoader() {
 
     document.addEventListener("click", onClick)
     return () => document.removeEventListener("click", onClick)
+  }, [])
+
+  useEffect(() => {
+    const onPageShow = () => {
+      hideNow()
+    }
+
+    const onPopState = () => {
+      hideNow()
+    }
+
+    window.addEventListener("pageshow", onPageShow)
+    window.addEventListener("popstate", onPopState)
+
+    return () => {
+      window.removeEventListener("pageshow", onPageShow)
+      window.removeEventListener("popstate", onPopState)
+      clearHideTimer()
+    }
   }, [])
 
   if (!visible) {

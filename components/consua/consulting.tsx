@@ -43,7 +43,7 @@ export function Consulting() {
         <div className="group relative pl-0 lg:pl-24">
           {/* small overlay image */}
           <img
-            src="/indian-assets/indian-businesswoman-office.jpg"
+            src="/project-desk.png"
             alt="Consultants reviewing a document together"
             className="absolute -left-2 top-4 z-20 hidden aspect-[4/5] w-44 rounded-2xl object-cover object-[50%_28%] shadow-xl ring-8 ring-secondary transition-transform duration-500 group-hover:-translate-y-2 group-hover:-rotate-2 sm:block lg:-left-4"
           />
@@ -51,7 +51,7 @@ export function Consulting() {
           <img
             src="/indian-assets/indian-team-meeting.jpg"
             alt="Business consultant talking on the phone"
-            className="relative z-10 ml-auto aspect-[4/5] w-full max-w-md rounded-3xl object-cover object-[42%_center] shadow-2xl transition-transform duration-700 group-hover:scale-[1.025]"
+            className="relative z-10 ml-auto aspect-[4/5] w-full max-w-md rounded-3xl object-cover object-center shadow-2xl transition-transform duration-700 group-hover:scale-[1.025]"
           />
           {/* experience badge */}
           <div className="absolute bottom-5 left-2 z-20 flex h-28 w-28 flex-col justify-end rounded-3xl bg-primary p-3 text-primary-foreground shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-2 sm:bottom-12 sm:left-4 sm:h-40 sm:w-40 sm:p-6 lg:left-12">

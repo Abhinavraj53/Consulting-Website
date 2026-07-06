@@ -2,21 +2,21 @@ import { ArrowRight } from "lucide-react"
 
 const posts = [
   {
-    img: "/indian-assets/indian-team-meeting.jpg",
+    img: "/epeno-offers/startup-india-certification.png",
     author: "Epeno",
     date: "Startup Guide",
     title: "How Startup India certification helps unlock business benefits.",
     href: "/services/startup-india-certification",
   },
   {
-    img: "/indian-assets/indian-founder-laptop.jpg",
+    img: "/epeno-offers/seed-fund.png",
     author: "Epeno",
     date: "Funding Guide",
     title: "Government loans and grants for startups and MSMEs.",
     href: "/services/seed-fund",
   },
   {
-    img: "/indian-assets/indian-businesswoman-office.jpg",
+    img: "/epeno-offers/gst-compliances.png",
     author: "Epeno",
     date: "Compliance Guide",
     title: "GST, ROC and annual compliance essentials for companies.",

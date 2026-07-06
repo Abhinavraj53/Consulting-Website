@@ -11,9 +11,9 @@ export default function ServicesPage() {
 
       <section className="relative overflow-hidden bg-navy pb-16 pt-32 text-white sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-48">
         <img
-          src="/consua-innovation.jpg"
+          src="/service-heroes/make-in-india.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[62%_center]"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-navy/45" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/98 via-navy/92 to-navy/48" />

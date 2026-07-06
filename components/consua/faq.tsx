@@ -128,8 +128,8 @@ export function Faq() {
         {/* Right: FAQ visual */}
         <div className="relative flex min-h-[410px] min-w-0 self-end items-end justify-center sm:min-h-[500px] lg:min-h-[640px]">
           <Image
-            src="/Hero%20left.png"
-            alt="Man thinking about Epeno questions"
+            src="/hero-woman.png"
+            alt="Indian advisor reviewing Epeno questions"
             width={1024}
             height={1024}
             className="relative z-10 -mb-px h-auto w-full max-w-[585px] object-contain object-bottom drop-shadow-[0_28px_40px_rgba(16,47,88,0.16)] transition-transform duration-700 hover:-translate-y-2 hover:scale-[1.015]"

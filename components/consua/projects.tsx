@@ -10,7 +10,7 @@ const slides = [
     desc: "Get certified as a startup, prepare investor-ready pitch decks, create detailed project reports and access government-backed growth opportunities with structured documentation.",
     metric: "01",
     tag: "Startup readiness",
-    img: "/indian-assets/indian-team-meeting.jpg",
+    img: "/service-heroes/startup-india-certification.jpg",
     href: "/services/startup-india-certification",
   },
   {
@@ -28,7 +28,7 @@ const slides = [
     desc: "Secure your brand identity, register tax essentials and build a clean legal foundation before scaling operations or raising capital.",
     metric: "03",
     tag: "Legal foundation",
-    img: "/indian-assets/indian-businesswoman-office.jpg",
+    img: "/service-heroes/trademark-registration.jpg",
     href: "/services/trademark-registration",
   },
   {
@@ -37,7 +37,7 @@ const slides = [
     desc: "Stay ahead of filing timelines with structured documentation, reminders and expert review across company and tax compliance.",
     metric: "04",
     tag: "Ongoing support",
-    img: "/indian-assets/indian-businessman-office.jpg",
+    img: "/service-heroes/income-tax-compliances.jpg",
     href: "/services/roc-compliances-for-pvt-ltd",
   },
 ]

@@ -31,7 +31,7 @@ const testimonials = [
     service: "CGTMSE Loan",
     rating: 5,
     beforeHighlight: "We needed funds for machinery but did not know how to present the credit case properly. Epeno prepared the documents for",
-    afterHighlight: "support and helped us explain the working-capital need in a way that felt professional.",
+    afterHighlight: "support and helped us explain the machinery funding need in a way that felt professional.",
   },
   {
     name: "Shivanshu Gangwar",

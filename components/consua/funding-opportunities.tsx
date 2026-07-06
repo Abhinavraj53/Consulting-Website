@@ -27,10 +27,10 @@ const fundingSchemes = [
   {
     title: "CGTMSE",
     amount: "Up to Rs10 Crore",
-    href: getServiceHref("Working Capital (CGTMSE Loan)"),
+    href: getServiceHref("CGTMSE Loan"),
     icon: TrendingUp,
     bullets: [
-      "Collateral-free working capital support",
+      "Collateral-free credit guarantee support",
       "Helpful for MSMEs planning credit expansion",
     ],
   },
