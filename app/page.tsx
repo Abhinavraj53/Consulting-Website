@@ -22,10 +22,10 @@ export default function Page() {
       <Hero />
       <Services />
       <FundingOpportunities />
+      <Process />
       <Testimonial />
       <IncubationNetwork />
       <Consulting />
-      <Process />
       <Flexibility />
       <Innovation />
       <Partners />
