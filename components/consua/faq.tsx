@@ -128,11 +128,11 @@ export function Faq() {
         {/* Right: FAQ visual */}
         <div className="relative flex min-h-[410px] min-w-0 self-end items-end justify-center sm:min-h-[500px] lg:min-h-[640px]">
           <Image
-            src="/hero-woman.png"
-            alt="Indian advisor reviewing Epeno questions"
+            src="/service-heroes/gst-compliances.jpg"
+            alt="Business compliance documents and advisory support"
             width={1024}
             height={1024}
-            className="relative z-10 -mb-px h-auto w-full max-w-[585px] object-contain object-bottom drop-shadow-[0_28px_40px_rgba(16,47,88,0.16)] transition-transform duration-700 hover:-translate-y-2 hover:scale-[1.015]"
+            className="relative z-10 -mb-px aspect-[4/3] w-full max-w-[585px] rounded-3xl object-cover object-center shadow-[0_28px_80px_-52px_rgba(16,47,88,0.75)] transition-transform duration-700 hover:-translate-y-2 hover:scale-[1.015]"
             priority={false}
           />
         </div>

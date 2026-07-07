@@ -43,8 +43,8 @@ export function Consulting() {
         <div className="group relative pl-0 lg:pl-24">
           {/* small overlay image */}
           <img
-            src="/project-desk.png"
-            alt="Consultants reviewing a document together"
+            src="/service-heroes/financial-deck.jpg"
+            alt="Financial deck and business documentation support"
             className="absolute -left-2 top-4 z-20 hidden aspect-[4/5] w-44 rounded-2xl object-cover object-[50%_28%] shadow-xl ring-8 ring-secondary transition-transform duration-500 group-hover:-translate-y-2 group-hover:-rotate-2 sm:block lg:-left-4"
           />
           {/* main image */}
