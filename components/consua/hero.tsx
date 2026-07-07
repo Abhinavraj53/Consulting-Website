@@ -66,15 +66,15 @@ export function Hero() {
   }, [chatPhase])
 
   return (
-    <section className="relative overflow-hidden bg-[#f8f6f2] text-foreground lg:min-h-[100svh]">
+    <section className="relative overflow-hidden bg-[#f8f6f2] text-foreground lg:min-h-[calc(100svh-1rem)]">
       <div
         aria-hidden="true"
         className="absolute bottom-[8%] right-[5%] hidden h-[58%] w-[28%] rounded-[2rem] bg-navy/[0.04] blur-2xl lg:block"
       />
 
-      <div className="ep-container relative grid gap-8 pb-0 pt-28 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:pb-0 lg:pt-40">
+      <div className="ep-container relative grid gap-8 pb-0 pt-28 sm:pt-32 lg:min-h-[calc(100svh-1rem)] lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:pb-0 lg:pt-44 xl:pt-40">
         <div className="relative z-20 max-w-xl pt-4 sm:pt-6 xl:max-w-2xl">
-          <h1 className="font-heading text-[1.68rem] font-extrabold leading-[1.12] text-[#05070c] text-balance min-[380px]:text-[1.95rem] sm:text-[2.48rem] lg:text-[2.75rem] xl:text-[3.05rem] 2xl:text-[3.28rem]">
+          <h1 className="font-heading text-[1.68rem] font-extrabold leading-[1.12] text-[#05070c] text-balance min-[380px]:text-[1.95rem] sm:text-[2.48rem] lg:text-[2.45rem] xl:text-[2.85rem] 2xl:text-[3.2rem]">
             Are You Maximizing Your Company&apos;s
             <span className="mt-2 block min-h-[1.18em] overflow-hidden whitespace-nowrap text-primary">
               <span
@@ -86,7 +86,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-7 text-[#101318] sm:mt-7 sm:text-lg sm:leading-8">
+          <p className="mt-5 max-w-xl text-base leading-7 text-[#101318] sm:mt-6 sm:text-lg sm:leading-8">
             Unlock the right opportunities for your business with expert,
             documentation-led support.
             <strong className="mt-1 block font-heading text-base font-extrabold text-foreground sm:text-lg">
@@ -94,7 +94,7 @@ export function Hero() {
             </strong>
           </p>
 
-          <div className="mt-8 sm:mt-9">
+          <div className="mt-7 sm:mt-8">
             <a href="/services" className="ep-button gap-3 sm:h-14 sm:px-8 sm:text-base">
               Grow with us
               <ArrowUpRight className="h-5 w-5" />
@@ -102,12 +102,12 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative z-10 mt-2 flex min-h-[430px] flex-col justify-end sm:min-h-[560px] lg:pointer-events-none lg:absolute lg:bottom-0 lg:-right-6 lg:mt-0 lg:h-[calc(100svh-8rem)] lg:min-h-[560px] lg:w-[56%] lg:justify-end xl:-right-2 xl:h-[calc(100svh-7rem)] xl:min-h-[640px] xl:w-[58%] 2xl:min-h-[700px]">
+        <div className="relative z-10 mt-2 flex min-h-[430px] flex-col justify-end sm:min-h-[560px] lg:pointer-events-none lg:absolute lg:bottom-0 lg:-right-6 lg:mt-0 lg:h-[calc(100svh-11rem)] lg:min-h-[500px] lg:w-[54%] lg:justify-end xl:-right-2 xl:h-[calc(100svh-9rem)] xl:min-h-[590px] xl:w-[56%] 2xl:min-h-[680px]">
           {chatPhase === "question" ? (
             <div
               key={`question-${activeBenefit}`}
               aria-hidden="true"
-              className="hero-dialog-card hero-dialog-question relative z-30 mx-auto w-full max-w-[330px] rounded-2xl border border-white/85 bg-white/95 px-5 py-4 text-navy shadow-[0_24px_65px_-34px_rgba(16,47,88,0.65)] backdrop-blur-md sm:max-w-[360px] lg:absolute lg:right-[1%] lg:top-[12%] xl:right-[2%] xl:top-[11%]"
+              className="hero-dialog-card hero-dialog-question relative z-30 mx-auto w-full max-w-[330px] rounded-2xl border border-white/85 bg-white/95 px-5 py-4 text-navy shadow-[0_24px_65px_-34px_rgba(16,47,88,0.65)] backdrop-blur-md sm:max-w-[360px] lg:absolute lg:right-[1%] lg:top-[5%] xl:right-[2%] xl:top-[8%]"
             >
               <span className="absolute -bottom-3 left-12 h-6 w-6 rotate-45 border-b border-r border-white/85 bg-white/95 sm:left-16" />
               <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm">
@@ -121,7 +121,7 @@ export function Hero() {
             <div
               key={`answer-${activeBenefit}`}
               aria-hidden="true"
-              className="hero-dialog-card hero-dialog-answer relative z-30 mx-auto w-full max-w-[340px] rounded-2xl border border-primary/35 bg-navy px-5 py-4 text-white shadow-[0_24px_65px_-36px_rgba(16,47,88,0.72)] backdrop-blur-md sm:max-w-[370px] lg:absolute lg:left-[1%] lg:top-[12%] xl:left-[2%] xl:top-[11%]"
+              className="hero-dialog-card hero-dialog-answer relative z-30 mx-auto w-full max-w-[340px] rounded-2xl border border-primary/35 bg-navy px-5 py-4 text-white shadow-[0_24px_65px_-36px_rgba(16,47,88,0.72)] backdrop-blur-md sm:max-w-[370px] lg:absolute lg:left-[1%] lg:top-[5%] xl:left-[2%] xl:top-[8%]"
             >
               <span className="absolute -bottom-3 right-12 h-6 w-6 rotate-45 bg-navy sm:right-16" />
               <span className="mb-2 inline-flex items-center gap-2 text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-primary">
@@ -144,7 +144,7 @@ export function Hero() {
               src="/Hero%20left.png"
               alt="Business owner asking a question"
               loading="eager"
-              className="hero-person hero-person-left relative z-10 mx-auto mt-5 h-auto w-[min(78vw,300px)] object-contain drop-shadow-[0_28px_38px_rgba(18,52,95,0.16)] sm:w-[min(54vw,390px)] lg:absolute lg:bottom-0 lg:left-[0%] lg:mt-0 lg:w-[430px] xl:left-[2%] xl:w-[500px] 2xl:w-[540px]"
+              className="hero-person hero-person-left relative z-10 mx-auto mt-5 h-auto w-[min(78vw,300px)] object-contain drop-shadow-[0_28px_38px_rgba(18,52,95,0.16)] sm:w-[min(54vw,390px)] lg:absolute lg:bottom-0 lg:left-[0%] lg:mt-0 lg:w-[380px] xl:left-[2%] xl:w-[460px] 2xl:w-[530px]"
             />
           ) : (
             <img
@@ -152,7 +152,7 @@ export function Hero() {
               src="/Hero%20right.png"
               alt="Epeno advisor answering"
               loading="eager"
-              className="hero-person hero-person-right relative z-10 mx-auto mt-5 h-auto w-[min(78vw,310px)] object-contain drop-shadow-[0_28px_38px_rgba(18,52,95,0.16)] sm:w-[min(54vw,400px)] lg:absolute lg:bottom-0 lg:right-[0%] lg:mt-0 lg:w-[440px] xl:right-[2%] xl:w-[510px] 2xl:w-[545px]"
+              className="hero-person hero-person-right relative z-10 mx-auto mt-5 h-auto w-[min(78vw,310px)] object-contain drop-shadow-[0_28px_38px_rgba(18,52,95,0.16)] sm:w-[min(54vw,400px)] lg:absolute lg:bottom-0 lg:right-[0%] lg:mt-0 lg:w-[390px] xl:right-[2%] xl:w-[470px] 2xl:w-[535px]"
             />
           )}
         </div>

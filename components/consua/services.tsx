@@ -63,13 +63,6 @@ export function Services() {
                       <span className="block break-words font-heading text-sm font-extrabold uppercase leading-tight">
                         {category.title}
                       </span>
-                      <span
-                        className={`mt-0.5 hidden text-[0.68rem] font-semibold lg:block ${
-                          active ? "text-white/60" : "text-muted-foreground"
-                        }`}
-                      >
-                        {category.services.length} services
-                      </span>
                     </span>
                   </button>
                 )
@@ -101,9 +94,6 @@ export function Services() {
                       </h3>
                     </div>
                   </div>
-                  <span className="w-fit shrink-0 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-white">
-                    {activeCategory.services.length} services
-                  </span>
                 </div>
               </div>
 

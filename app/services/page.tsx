@@ -35,7 +35,7 @@ export default function ServicesPage() {
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               ["7", "Service pillars"],
-              [`${allServices.length}+`, "Business services"],
+              ["100+", "Service Options"],
               ["1", "Documentation desk"],
               ["360°", "Founder support"],
             ].map(([value, label]) => (
@@ -83,9 +83,6 @@ export default function ServicesPage() {
                     <span className="absolute bottom-4 left-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_14px_30px_-18px_rgba(0,0,0,0.85)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
                       <category.icon className="h-6 w-6" />
                     </span>
-                    <span className="absolute bottom-4 right-4 rounded-full border border-white/20 bg-navy/65 px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.12em] text-white backdrop-blur-md">
-                      {category.services.length} services
-                    </span>
                   </span>
 
                   <span className="flex flex-1 flex-col p-5 sm:p-6">
@@ -130,9 +127,6 @@ export default function ServicesPage() {
                       {category.description}
                     </h3>
                   </div>
-                  <span className="w-fit rounded-full bg-accent px-5 py-2 text-sm font-extrabold text-accent-foreground">
-                    {category.services.length} Services
-                  </span>
                 </div>
 
                 <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
