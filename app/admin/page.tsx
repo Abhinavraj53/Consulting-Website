@@ -5,9 +5,11 @@ import {
   LeadsDashboard,
   type AdminLead,
 } from "@/components/admin/leads-dashboard"
+import { SiteSettingsForm } from "@/components/admin/site-settings-form"
 import { Logo } from "@/components/consua/logo"
 import { isAdminAuthenticated } from "@/lib/admin-auth"
 import { getAllLeads } from "@/lib/leads"
+import { getSiteSettings } from "@/lib/site-settings"
 
 export const metadata: Metadata = {
   title: "Leads Admin | Epeno Advisory",
@@ -19,7 +21,10 @@ export const dynamic = "force-dynamic"
 export default async function AdminPage() {
   if (!(await isAdminAuthenticated())) redirect("/admin/login")
 
-  const leads = await getAllLeads()
+  const [leads, siteSettings] = await Promise.all([
+    getAllLeads(),
+    getSiteSettings(),
+  ])
   const serializedLeads: AdminLead[] = leads.map((lead) => ({
     id: lead._id!.toString(),
     name: lead.name,
@@ -53,6 +58,10 @@ export default async function AdminPage() {
           Contact-page and popup submissions are saved together using unique
           phone numbers.
         </p>
+
+        <div className="mt-8">
+          <SiteSettingsForm settings={siteSettings} />
+        </div>
 
         <div className="mt-8">
           <LeadsDashboard leads={serializedLeads} />

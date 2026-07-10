@@ -70,7 +70,7 @@ export function Consulting() {
         {/* Right: text + cards */}
         <div>
           <h2 className="font-heading text-4xl font-bold leading-tight tracking-tight text-foreground text-balance md:text-5xl">
-            Expert guidance for business benefits and compliance
+            When forms feel final, strategy can still change the outcome
           </h2>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
             Don&apos;t miss out on valuable support for your business. Epeno

@@ -25,10 +25,10 @@ export function Partners() {
       <div className="ep-container grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="ep-eyebrow">
-            Service Options
+            The Epeno stack
           </p>
           <h2 className="ep-title mt-4">
-            Empowering your business journey with tailored solutions
+            Not just services. A sequence built for business momentum.
           </h2>
           <p className="ep-copy mt-6 max-w-xl">
             Epeno brings registrations, certifications, tax filings,

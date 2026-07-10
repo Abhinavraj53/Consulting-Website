@@ -5,7 +5,7 @@ export function Innovation() {
         {/* Left text */}
         <div>
           <h2 className="font-heading text-4xl font-bold leading-tight tracking-tight text-balance">
-            Reach out today for business growth support
+            The next approval may be hiding in your documents
           </h2>
 
           <div className="mt-10 space-y-4">

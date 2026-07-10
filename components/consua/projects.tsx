@@ -56,9 +56,9 @@ export function Projects() {
       <div className="ep-container relative">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(320px,0.45fr)] lg:items-end">
           <div className="max-w-2xl">
-            <p className="ep-eyebrow">Featured Solutions</p>
+            <p className="ep-eyebrow">Cases we structure</p>
             <h2 className="mt-4 font-heading text-3xl font-extrabold leading-[1.08] tracking-tight text-balance sm:text-4xl lg:text-[2.8rem] xl:text-5xl">
-              Strategic services that move your business forward
+              Where the next step is unclear, these solutions start the path
             </h2>
           </div>
 

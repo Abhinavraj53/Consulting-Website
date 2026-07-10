@@ -178,9 +178,9 @@ export function Testimonial() {
       <div className="ep-container relative">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <p className="ep-eyebrow">Founder Success Stories</p>
+            <p className="ep-eyebrow">What changed after structure</p>
             <h2 className="mt-3 max-w-3xl font-heading text-3xl font-extrabold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-              Founder journeys backed by schemes, funding files and Epeno guidance.
+              Real businesses, sharper files and outcomes worth reading.
             </h2>
           </div>
 

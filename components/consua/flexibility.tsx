@@ -49,9 +49,9 @@ export function Flexibility() {
             className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl"
           />
           <div className="relative max-w-xl">
-            <p className="ep-eyebrow mb-5">Why Epeno</p>
+            <p className="ep-eyebrow mb-5">Why files move with Epeno</p>
             <h2 className="font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-white text-balance md:text-5xl">
-              Advisory that keeps every step clear, compliant and accountable.
+              Every missed detail has a cost. We build the checklist before it does.
             </h2>
             <p className="mt-7 text-lg leading-8 text-white/70">
               From choosing the right registration to applying for benefits,

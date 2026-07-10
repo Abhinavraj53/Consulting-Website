@@ -115,11 +115,11 @@ export function FundingOpportunities() {
             <div>
               <p className="ep-eyebrow inline-flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 fill-primary text-primary-foreground" />
-                Funding opportunities
+                Capital routes
               </p>
               <h2 className="mt-4 max-w-4xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Funding support for every stage of{" "}
-                <span className="text-primary">your business</span>
+                Before a bank says yes, your file must tell the{" "}
+                <span className="text-primary">right story</span>
               </h2>
             </div>
             <a href="/services#funding-solutions" className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-white px-5 py-3 font-heading text-sm font-extrabold text-navy shadow-[0_18px_48px_-34px_rgba(16,47,88,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-primary-foreground">

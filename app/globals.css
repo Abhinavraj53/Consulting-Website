@@ -212,11 +212,23 @@
   .hero-person-right {
     animation: hero-person-right-in 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
+  .ep-marquee-track {
+    animation: ep-marquee 38s linear infinite;
+  }
 }
 
 @keyframes ep-loader-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes ep-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

@@ -14,11 +14,16 @@ import { Testimonial } from "@/components/consua/testimonial"
 import { Faq } from "@/components/consua/faq"
 import { Blog } from "@/components/consua/blog"
 import { Footer } from "@/components/consua/footer"
+import { getSiteSettings } from "@/lib/site-settings"
 
-export default function Page() {
+export const dynamic = "force-dynamic"
+
+export default async function Page() {
+  const siteSettings = await getSiteSettings()
+
   return (
     <main className="overflow-x-hidden">
-      <Header />
+      <Header marquee={siteSettings} />
       <Hero />
       <Services />
       <FundingOpportunities />

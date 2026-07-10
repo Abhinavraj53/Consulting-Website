@@ -68,9 +68,9 @@ export function Process() {
       <div className="ep-container">
         <div className="grid items-end gap-8 lg:grid-cols-[0.72fr_1fr]">
           <div>
-            <p className="ep-eyebrow">How we work</p>
+            <p className="ep-eyebrow">How uncertainty becomes action</p>
             <h2 className="ep-title mt-4 max-w-xl">
-              From business problem to completed solution
+              From scattered documents to a file that can move
             </h2>
           </div>
           <p className="ep-copy max-w-2xl lg:justify-self-end">

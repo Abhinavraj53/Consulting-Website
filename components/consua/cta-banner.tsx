@@ -20,7 +20,7 @@ export function CtaBanner() {
       <div className="ep-container relative grid items-center gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-14">
         <div className="max-w-xl">
           <h2 className="font-heading text-4xl font-extrabold leading-tight tracking-tight text-balance md:text-5xl">
-            Looking for a First-Class Business Consultant?
+            Have a business file that needs the right direction?
           </h2>
           <a href="tel:+919211831649" className="ep-button mt-8 sm:mt-12 sm:h-16 sm:px-12 sm:text-base">
             Request A Call Back

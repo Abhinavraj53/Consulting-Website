@@ -1,8 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, type CSSProperties } from "react"
 import { ChevronDown, MapPin, Menu, Phone, X } from "lucide-react"
 import { siteDetails } from "@/lib/site"
+import type { SerializedSiteSettings } from "@/lib/site-settings"
 import { Facebook, Instagram, Linkedin } from "./brand-icons"
 import { Logo } from "./logo"
 import { getServiceHref, serviceCategories } from "./service-data"
@@ -14,7 +15,7 @@ const navItems = [
   { label: "Contact", href: "/contact", hasDropdown: false },
 ]
 
-export function Header() {
+export function Header({ marquee }: { marquee?: SerializedSiteSettings }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -52,6 +53,9 @@ export function Header() {
   }, [mobileOpen])
 
   const scrolled = hasMounted && isScrolled
+  const marqueeText = marquee?.marqueeText || ""
+  const showMarquee = Boolean(marquee?.marqueeEnabled && marqueeText)
+  const marqueeHeight = showMarquee ? "2.5rem" : "0px"
 
   return (
     <header
@@ -59,6 +63,7 @@ export function Header() {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-background shadow-sm" : "bg-transparent"
       }`}
+      style={{ "--marquee-height": marqueeHeight } as CSSProperties}
     >
       <div
         aria-hidden="true"
@@ -70,9 +75,35 @@ export function Header() {
         />
       </div>
 
+      {showMarquee && (
+        <div className="relative z-20 h-10 overflow-hidden border-b border-primary/40 bg-[#12345f] text-white shadow-[inset_0_-1px_0_rgba(245,186,75,0.22)]">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-[#12345f] to-transparent"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-[#12345f] to-transparent"
+          />
+          <div className="flex h-full items-center whitespace-nowrap">
+            <div className="ep-marquee-track flex min-w-max items-center gap-12 pr-12">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center gap-3 font-heading text-[0.78rem] font-bold normal-case tracking-[0.03em] text-white sm:text-[0.86rem]"
+                >
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_12px_rgba(245,186,75,0.9)]" />
+                  {marqueeText}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute left-0 top-0 z-10 hidden bg-white transition-all duration-300 xl:block ${
+        className={`pointer-events-none absolute left-0 top-[var(--marquee-height)] z-10 hidden bg-white transition-all duration-300 xl:block ${
           scrolled ? "h-[76px] w-[340px]" : "h-[136px] w-[590px]"
         }`}
         style={{
@@ -85,7 +116,7 @@ export function Header() {
       {!scrolled && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 z-[9] hidden h-[120px] w-[612px] bg-white/70 xl:block"
+          className="pointer-events-none absolute left-0 top-[var(--marquee-height)] z-[9] hidden h-[120px] w-[612px] bg-white/70 xl:block"
           style={{ clipPath: "polygon(0 0, 94% 0, 100% 100%, 0 100%)" }}
         />
       )}
@@ -94,8 +125,8 @@ export function Header() {
         href="/"
         className={`absolute z-30 hidden shrink-0 items-center transition-all duration-300 xl:flex ${
           scrolled
-            ? "left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] top-1/2 -translate-y-1/2"
-            : "left-[clamp(110px,12vw,210px)] top-[68px] -translate-y-1/2"
+            ? "left-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] top-[calc(var(--marquee-height)+38px)] -translate-y-1/2"
+            : "left-[clamp(110px,12vw,210px)] top-[calc(var(--marquee-height)+68px)] -translate-y-1/2"
         }`}
         aria-label="Epeno home"
       >
@@ -245,7 +276,7 @@ export function Header() {
       )}
 
       {mobileOpen && (
-        <div className="h-[calc(100dvh-74px)] overflow-y-auto border-t border-border bg-background shadow-lg xl:hidden">
+        <div className="h-[calc(100dvh-74px-var(--marquee-height))] overflow-y-auto border-t border-border bg-background shadow-lg xl:hidden">
           <nav className="flex flex-col gap-1 px-4 py-4 sm:px-6">
             {navItems.map((item) => (
               <a

@@ -20,9 +20,9 @@ export function Services() {
       <div className="ep-container">
         <div className="grid items-start gap-6 lg:grid-cols-[330px_minmax(0,1fr)] xl:grid-cols-[360px_minmax(0,1fr)]">
           <aside className="ep-card h-fit p-5 sm:p-6 lg:sticky lg:top-28">
-            <p className="ep-eyebrow">What we do</p>
+            <p className="ep-eyebrow">Where your file can go</p>
             <h2 className="mt-3 font-heading text-2xl font-extrabold leading-tight tracking-tight text-foreground sm:text-3xl">
-              Complete business support under one roof
+              One business problem. Many unlock points.
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Select a category to explore every available Epeno service.

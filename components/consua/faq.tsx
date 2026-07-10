@@ -78,13 +78,13 @@ export function Faq() {
           />
           <p className="mb-3 text-sm font-bold uppercase tracking-widest">
             <span className="bg-gradient-to-r from-primary to-navy bg-clip-text text-transparent">
-              Basic FAQ
+              Questions clients ask first
             </span>
           </p>
           <h2 className="max-w-2xl font-heading text-4xl font-bold leading-tight text-foreground text-balance md:text-5xl">
-            Common Questions
+            Before you apply,
             <br />
-            about Epeno
+            know what matters
           </h2>
 
           <div className="mt-10 flex max-w-2xl flex-col gap-4">

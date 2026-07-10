@@ -211,9 +211,9 @@ export function IncubationNetwork() {
             key={activeRegion.code}
             className="animate-in fade-in slide-in-from-bottom-2 duration-300"
           >
-            <p className="ep-eyebrow">{activeRegion.name} Startup Network</p>
+            <p className="ep-eyebrow">{activeRegion.name} opportunity map</p>
             <h2 className="mt-4 max-w-2xl font-heading text-3xl font-extrabold leading-[1.12] tracking-[-0.035em] text-foreground sm:text-4xl lg:text-[2.65rem] xl:text-5xl">
-              Growing startup support in {activeRegion.name}
+              The support network around {activeRegion.name} is bigger than it looks
               <span className="mt-4 block text-2xl font-extrabold leading-tight tracking-[-0.025em] text-navy sm:text-3xl xl:text-[2.35rem]">
                 {activeRegion.count} incubation centre{activeRegion.count > 1 ? "s" : ""}
               </span>

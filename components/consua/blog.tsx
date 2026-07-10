@@ -30,10 +30,10 @@ export function Blog() {
       <div className="ep-container">
         <div className="text-center">
           <p className="ep-eyebrow">
-            Knowledge Hub
+            Read before you file
           </p>
           <h2 className="ep-title mt-4">
-            Business guides &amp; updates
+            Guides that reveal the next business move
           </h2>
           <span className="mx-auto mt-5 block h-1 w-16 rounded-full bg-primary" />
         </div>
