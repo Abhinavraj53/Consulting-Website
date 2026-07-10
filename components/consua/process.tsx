@@ -70,7 +70,12 @@ export function Process() {
           <div>
             <p className="ep-eyebrow">How uncertainty becomes action</p>
             <h2 className="ep-title mt-4 max-w-xl">
-              From scattered documents to a file that can move
+              <span className="block text-foreground">
+                When Bank <span className="ep-heading-strike">Rejects</span> You,
+              </span>
+              <span className="block text-foreground">
+                We Structure <span className="ep-heading-accent">Solutions</span>
+              </span>
             </h2>
           </div>
           <p className="ep-copy max-w-2xl lg:justify-self-end">

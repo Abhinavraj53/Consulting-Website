@@ -69,8 +69,22 @@ export function Consulting() {
 
         {/* Right: text + cards */}
         <div>
+          <p className="ep-eyebrow mb-4 text-secondary/80">Not everything is over when forms are filled</p>
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold uppercase tracking-[0.22em] text-primary">
+              Funding amount
+            </span>
+            <span className="text-sm font-semibold text-foreground/80">
+              ₹15 Cr+ structured support available
+            </span>
+          </div>
           <h2 className="font-heading text-4xl font-bold leading-tight tracking-tight text-foreground text-balance md:text-5xl">
-            When forms feel final, strategy can still change the outcome
+            <span className="block">
+              When forms feel <span className="text-primary">final</span>,
+            </span>
+            <span className="block">
+              strategy can still <span className="ep-heading-accent">change</span> the outcome
+            </span>
           </h2>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
             Don&apos;t miss out on valuable support for your business. Epeno

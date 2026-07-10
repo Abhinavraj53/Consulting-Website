@@ -166,6 +166,12 @@
   .ep-title {
     @apply font-heading text-3xl font-extrabold leading-[1.12] tracking-tight text-foreground text-balance sm:text-4xl lg:text-5xl;
   }
+  .ep-heading-accent {
+    @apply inline text-primary underline decoration-primary/60 underline-offset-4;
+  }
+  .ep-heading-strike {
+    @apply inline text-foreground/80 line-through decoration-primary/80 decoration-2;
+  }
   .ep-copy {
     @apply text-base leading-7 text-muted-foreground sm:leading-8 md:text-lg;
   }
