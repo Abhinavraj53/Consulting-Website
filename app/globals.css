@@ -174,10 +174,10 @@
   }
   /* Partner logo helpers */
   .partner-logo {
-    @apply flex h-28 w-28 min-w-[7rem] items-center justify-center rounded-2xl bg-white shadow-[0_18px_40px_-26px_rgba(16,47,88,0.06)] p-4;
+    @apply flex min-h-36 w-full items-center justify-center rounded-2xl bg-white p-6 shadow-[0_18px_40px_-26px_rgba(16,47,88,0.06)] sm:min-h-40;
   }
   .partner-logo img {
-    @apply max-h-14 object-contain transition-transform duration-300;
+    @apply max-h-24 w-full object-contain transition-transform duration-300 sm:max-h-28;
   }
   .partner-logo:hover img {
     transform: scale(1.06);

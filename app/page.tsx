@@ -7,6 +7,7 @@ import { Process } from "@/components/consua/process"
 import { Flexibility } from "@/components/consua/flexibility"
 import { Innovation } from "@/components/consua/innovation"
 import { Partners } from "@/components/consua/partners"
+import { ChannelPartners } from "@/components/consua/channel-partners"
 import { IncubationNetwork } from "@/components/consua/incubation-network"
 import { Projects } from "@/components/consua/projects"
 import { CtaBanner } from "@/components/consua/cta-banner"
@@ -34,6 +35,7 @@ export default async function Page() {
       <Flexibility />
       <Innovation />
       <Partners />
+      <ChannelPartners />
       <Projects />
       <CtaBanner />
       <Faq />

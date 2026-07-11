@@ -19,16 +19,6 @@ const categories = [
   "Epeno Special Package",
 ]
 
-const partnerLogos = [
-  "/partners/ttml.png",
-  "/partners/logo2.png",
-  "/partners/logo3.png",
-  "/partners/logo4.png",
-  "/partners/logo5.png",
-  "/partners/logo6.png",
-  "/partners/logo7.png",
-]
-
 export function Partners() {
   return (
     <section className="ep-section bg-background">
@@ -78,21 +68,6 @@ export function Partners() {
                 {category}
               </div>
             ))}
-          </div>
-          
-          <div className="mt-8">
-            <p className="ep-eyebrow">Our Channel Partners</p>
-            <div className="mt-4 flex items-center gap-6 overflow-x-auto py-4">
-              {partnerLogos.map((src, i) => (
-                <div
-                  key={src}
-                  className="partner-logo logo-float"
-                  style={{ animationDelay: `${(i % 5) * 0.35}s` }}
-                >
-                  <img src={src} alt={`partner-${i}`} />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
